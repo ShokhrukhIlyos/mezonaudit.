@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soliq oliy maktabi — MEZON·AUDIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1a1f2b;background:#f6f2e9;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    ::selection{background:#0c2340;color:#d4b66a;}
+    img{display:block;}
+
+    .nav-link{padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s;}
+    .nav-link:hover{border-bottom-color:#b8923a;}
+    .nav-link.active{border-bottom-color:#b8923a;}
+    .nav-cta{background:#0c2340;color:#f6f2e9;padding:11px 22px;font-weight:600;transition:background .2s,color .2s;}
+    .nav-cta:hover{background:#b8923a;color:#0c2340;}
+
+    .breadcrumb-link{color:rgba(246,242,233,.7);transition:color .2s;}
+    .breadcrumb-link:hover{color:#d4b66a;}
+
+    .share-btn{width:32px;height:32px;border:1px solid rgba(212,182,106,.3);display:flex;align-items:center;justify-content:center;color:#d4b66a;cursor:pointer;transition:background .2s;}
+    .share-btn:hover{background:rgba(212,182,106,.15);}
+
+    .all-news-link{font-size:14px;font-weight:600;color:#0c2340;border-bottom:2px solid #b8923a;padding-bottom:4px;transition:color .2s;}
+    .all-news-link:hover{color:#b8923a;}
+
+    .related-card{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(12,35,64,.1);transition:transform .2s,box-shadow .2s;}
+    .related-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(12,35,64,.12);}
+    .read-link{font-size:13px;font-weight:600;color:#0c2340;transition:color .2s;}
+    .read-link:hover{color:#b8923a;}
+
+    .cta-btn{background:#b8923a;color:#0c2340;padding:14px 28px;font-weight:600;font-size:15px;white-space:nowrap;transition:background .2s;}
+    .cta-btn:hover{background:#d4b66a;}
+
+    .footer-link{transition:color .2s;}
+    .footer-link:hover{color:#f6f2e9;}
+
+    article h2{font:700 27px/1.3 'Spectral';color:#0c2340;margin:42px 0 18px;}
+    article p{font-size:17px;line-height:1.8;color:#3a4250;margin:0 0 24px;}
+    article blockquote{border-left:3px solid #b8923a;background:#faf8f2;padding:24px 28px;margin:0 0 28px;}
+    article blockquote p{font:500 21px/1.5 'Spectral';font-style:italic;color:#0c2340;margin:0;}
+    article ul{font-size:17px;line-height:1.8;color:#3a4250;margin:0 0 28px;padding-left:0;list-style:none;}
+    article ul li{display:flex;gap:12px;margin-bottom:12px;}
+    article ul li::before{content:'→';color:#b8923a;font-weight:700;flex:none;}
+  </style>
+</head>
+<body>
+<div style="background:#f6f2e9;">
+
+  <!-- TOP UTILITY BAR -->
+  <div style="background:#081a30;color:rgba(246,242,233,.72);font-size:13px;">
+    <div style="max-width:1240px;margin:0 auto;padding:9px 32px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;">
+      <div style="display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;">
+        <span style="display:flex;align-items:center;gap:7px;"><span style="color:#d4b66a;">✆</span> +998 71 200 18 18</span>
+        <span style="display:flex;align-items:center;gap:7px;"><span style="color:#d4b66a;">✉</span> info@mezonaudit.uz</span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <span style="color:#d4b66a;font-weight:600;">O'z</span><span style="opacity:.4;">Ru</span><span style="opacity:.4;">En</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER / NAV -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(246,242,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(12,35,64,.1);">
+    <div style="max-width:1240px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;">
+      <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+        <span style="width:34px;height:34px;background:#0c2340;display:flex;align-items:center;justify-content:center;">
+          <span style="width:13px;height:13px;border:2px solid #d4b66a;transform:rotate(45deg);display:block;"></span>
+        </span>
+        <span style="display:flex;flex-direction:column;line-height:1;">
+          <span style="font:700 21px/1 'Spectral';letter-spacing:.04em;color:#0c2340;">MEZON<span style="color:#b8923a;">·</span>AUDIT</span>
+          <span style="font:500 9px/1 'IBM Plex Sans';letter-spacing:.22em;color:#7a8290;margin-top:5px;">PROFESSIONAL AUDIT XIZMATLARI</span>
+        </span>
+      </a>
+      <nav style="display:flex;flex-wrap:wrap;gap:28px;align-items:center;font-size:15px;font-weight:500;color:#2a3240;">
+        <a href="index.html#xizmatlar" class="nav-link">Xizmatlar</a>
+        <a href="index.html#yangiliklar" class="nav-link active">Yangiliklar</a>
+        <a href="index.html#kitoblar" class="nav-link">Kitoblar</a>
+        <a href="index.html#biz" class="nav-link">Biz haqimizda</a>
+        <a href="index.html#aloqa" class="nav-cta">Bog'lanish</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ARTICLE HEADER (navy) -->
+  <section style="background:#0c2340;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(800px 460px at 80% -20%,rgba(184,146,58,.16),transparent 60%);pointer-events:none;"></div>
+    <div style="max-width:820px;margin:0 auto;padding:34px 32px 60px;position:relative;">
+      <div style="font-size:13px;color:rgba(246,242,233,.55);margin-bottom:30px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <a href="index.html" class="breadcrumb-link">Bosh sahifa</a>
+        <span style="color:#b8923a;">/</span>
+        <a href="index.html#yangiliklar" class="breadcrumb-link">Yangiliklar</a>
+        <span style="color:#b8923a;">/</span>
+        <span>Soliq</span>
+      </div>
+      <div style="display:flex;gap:14px;align-items:center;margin-bottom:22px;">
+        <span style="background:#b8923a;color:#0c2340;font-size:11px;font-weight:700;letter-spacing:.12em;padding:6px 13px;">SOLIQ</span>
+        <span style="font-size:13px;color:rgba(246,242,233,.6);">17-iyun, 2026</span>
+      </div>
+      <h1 style="font:700 clamp(30px,4.4vw,50px)/1.14 'Spectral';color:#f6f2e9;margin:0 0 26px;letter-spacing:-.01em;">Soliq oliy maktabi: malakali kadrlar tayyorlanadimi?</h1>
+      <p style="font-size:19px;line-height:1.6;color:rgba(246,242,233,.74);margin:0 0 34px;font-family:'Spectral';font-style:italic;">PF-95-son Farmoni asosida Soliq qo'mitasi huzurida Soliq oliy maktabi tashkil etiladi. Bu haqda qiziqarli savollar va takliflarimiz.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;border-top:1px solid rgba(212,182,106,.22);padding-top:24px;">
+        <div style="display:flex;gap:14px;align-items:center;">
+          <span style="width:46px;height:46px;background:#11294a;border:1px solid rgba(212,182,106,.3);display:flex;align-items:center;justify-content:center;font:600 16px 'Spectral';color:#d4b66a;">IA</span>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:#f6f2e9;">Ibrohim Ahmadxonov</div>
+            <div style="font-size:12px;color:rgba(246,242,233,.55);">Bosh auditor · 6 daqiqa o'qish</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;font-size:13px;color:rgba(246,242,233,.6);">
+          <span>Ulashish:</span>
+          <span class="share-btn">in</span>
+          <span class="share-btn">f</span>
+          <span class="share-btn">✆</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED IMAGE -->
+  <div style="max-width:980px;margin:0 auto;padding:0 32px;transform:translateY(-32px);">
+    <div style="aspect-ratio:21/9;overflow:hidden;border:1px solid rgba(12,35,64,.1);box-shadow:0 24px 50px rgba(12,35,64,.18);">
+      <img src="ChatExport_2026-06-25/ChatExport_2026-06-25/photos/photo_102@17-06-2026_10-17-07.jpg" alt="Soliq oliy maktabi" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <article style="max-width:720px;margin:0 auto;padding:24px 32px 40px;">
+    <p style="font-size:19px;line-height:1.75;color:#2a3240;margin:0 0 26px;font-weight:500;">O'zbekiston Respublikasi Prezidentining 2026 yil 19 maydagi PF–95-son Farmoniga asosan Soliq qo'mitasi huzurida Soliq oliy maktabi tashkil etilishi belgilangan.</p>
+
+    <p>Bu daргоhda o'qish davomiyligi kamida 3 yil bo'lgan bakalavriatura ta'lim yo'nalishlari va magistratura yo'nalishlarida tahsil olish mumkin. Oliy maktabda soliqlar va soliqqa tortish, raqamli soliq ma'murchilyigi, soliq huquqi va moliyaviy nazorat kabi yo'nalishlarda kadrlarni tayyorlash yo'lga qo'yiladi.</p>
+
+    <p>Oliy maktab bitiruvchilariga davlat namunadagi diplom bilan birga soliq maslahatchisi va auditor malaka sertifikatini olish uchun o'quv kurslarini o'taganligy to'g'risidagi hujjat beriladi.</p>
+
+    <h2>Qiziqarli savollar</h2>
+
+    <ul>
+      <li>Oliy maktabdan hatto magistr bitiruvchisi ham soliq maslahatchi sertifikatiga avtomatik ega bo'lolmaydi — bu ta'lim kuchsizligimi yoki imtihonlar shaffof emasligidan dalolat?</li>
+      <li>ACCA, DipIFR, CAP/CIPA, CIA, ACA sertifikatlarini olish uchun o'qish xarajatlari Oliy maktab tomonidan qoplab berilishi nazarda tutilgan. Biz esa bizning ta'lim dasturimizni xalqaro imtihon markazlari tan olib, o'z imtihonlaridan ozod qiladi demish kerak emasmi?</li>
+      <li>Oliy maktab ta'lim dasturi dunyodagi eng nufuzli universitetlarning soliq va buxgalteriya yo'nalishlari bo'yicha dasturlari bilan raqobat qila oladimi?</li>
+    </ul>
+
+    <blockquote>
+      <p>Qarorlar NIMA qilish haqida eng zo'r fikrlarni berishi mumkin. Lekin bularni KIM qilishi natijani belgilaydi.</p>
+    </blockquote>
+
+    <h2>Bizning taklif</h2>
+
+    <p>Oliy maktabning ta'lim dasturi va kitoblarini har yili yangilanishi uchun mas'ul bo'lgan maxsus KENGASH tashkil qilinishi va Kengashda Respublikaning eng top ekspertlari — ta'lim jarayonida tushuntiriladan kontentlarni joriy qonunchilikka mosligi va o'qituvchilarning salohiyatini xolis baholay oladigan ekspertlardan tashkil topishini tavsiya qilamiz.</p>
+
+    <p>Ingliz tilida ham fakultetlar ochilsa, xalqaro darajadagi ustozlardan ta'lim olish imkoni yaratilsa, bu Oliy maktab haqiqatan ham soha uchun ulkan hissaga qo'shadi.</p>
+
+    <!-- CTA BLOCK -->
+    <div style="background:#0c2340;padding:36px 38px;margin:40px 0 8px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;">
+      <div>
+        <div style="font:600 22px 'Spectral';color:#f6f2e9;margin-bottom:8px;">Soliq bo'yicha savolingiz bormi?</div>
+        <div style="font-size:14px;color:rgba(246,242,233,.65);">Bepul dastlabki konsultatsiyaga yoziling.</div>
+      </div>
+      <a href="index.html#aloqa" class="cta-btn">Konsultatsiya olish →</a>
+    </div>
+  </article>
+
+  <!-- TAGS -->
+  <div style="max-width:720px;margin:0 auto;padding:0 32px 56px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+    <span style="font-size:13px;color:#8a8170;margin-right:6px;">Teglar:</span>
+    <span style="font-size:13px;border:1px solid rgba(12,35,64,.2);padding:6px 14px;border-radius:999px;color:#0c2340;">Soliq oliy maktabi</span>
+    <span style="font-size:13px;border:1px solid rgba(12,35,64,.2);padding:6px 14px;border-radius:999px;color:#0c2340;">PF-95</span>
+    <span style="font-size:13px;border:1px solid rgba(12,35,64,.2);padding:6px 14px;border-radius:999px;color:#0c2340;">ACCA</span>
+    <span style="font-size:13px;border:1px solid rgba(12,35,64,.2);padding:6px 14px;border-radius:999px;color:#0c2340;">2026</span>
+  </div>
+
+  <!-- RELATED -->
+  <section style="background:#faf8f2;border-top:1px solid rgba(12,35,64,.08);padding:72px 0;">
+    <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:space-between;margin-bottom:40px;">
+        <h2 style="font:700 clamp(26px,3vw,34px) 'Spectral';color:#0c2340;margin:0;">O'xshash maqolalar</h2>
+        <a href="index.html#yangiliklar" class="all-news-link">Barcha yangiliklar →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px;">
+
+        <a href="article.html" class="related-card">
+          <div style="aspect-ratio:16/10;overflow:hidden;">
+            <img src="ChatExport_2026-06-25/ChatExport_2026-06-25/photos/photo_103@17-06-2026_23-53-08.jpg" alt="Pensioner va ijtimoiy soliq" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1;">
+            <div style="display:flex;gap:12px;align-items:center;margin-bottom:14px;">
+              <span style="font-size:11px;font-weight:600;letter-spacing:.1em;color:#b8923a;">SOLIQ</span>
+              <span style="font-size:12px;color:#9a9182;">17-iyun, 2026</span>
+            </div>
+            <h4 style="font:600 19px/1.3 'Spectral';color:#0c2340;margin:0 0 16px;flex:1;">Pensioner xodimdan 12% ijtimoiy soliq: mantiqiy tahlil</h4>
+            <span class="read-link">O'qish →</span>
+          </div>
+        </a>
+
+        <a href="article.html" class="related-card">
+          <div style="aspect-ratio:16/10;overflow:hidden;">
+            <img src="ChatExport_2026-06-25/ChatExport_2026-06-25/photos/photo_72@29-04-2026_19-06-03.jpg" alt="Dachalar solig'i" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1;">
+            <div style="display:flex;gap:12px;align-items:center;margin-bottom:14px;">
+              <span style="font-size:11px;font-weight:600;letter-spacing:.1em;color:#b8923a;">SOLIQ</span>
+              <span style="font-size:12px;color:#9a9182;">29-aprel, 2026</span>
+            </div>
+            <h4 style="font:600 19px/1.3 'Spectral';color:#0c2340;margin:0 0 16px;flex:1;">Dachalar solig'i: sabab va oqibatlar — uch tomonlama tahlil</h4>
+            <span class="read-link">O'qish →</span>
+          </div>
+        </a>
+
+        <a href="article.html" class="related-card">
+          <div style="aspect-ratio:16/10;overflow:hidden;">
+            <img src="ChatExport_2026-06-25/ChatExport_2026-06-25/photos/photo_71@27-04-2026_13-01-51.jpg" alt="QQS va eksport" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1;">
+            <div style="display:flex;gap:12px;align-items:center;margin-bottom:14px;">
+              <span style="font-size:11px;font-weight:600;letter-spacing:.1em;color:#b8923a;">SOLIQ</span>
+              <span style="font-size:12px;color:#9a9182;">27-aprel, 2026</span>
+            </div>
+            <h4 style="font:600 19px/1.3 'Spectral';color:#0c2340;margin:0 0 16px;flex:1;">Eksport va QQS: 180 kunlik muddatda valyuta tushmaganida</h4>
+            <span class="read-link">O'qish →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#081a30;color:rgba(246,242,233,.66);">
+    <div style="max-width:1240px;margin:0 auto;padding:64px 32px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:44px;">
+      <div style="max-width:300px;">
+        <div style="display:flex;align-items:center;gap:11px;margin-bottom:18px;">
+          <span style="width:32px;height:32px;background:#0c2340;border:1px solid rgba(212,182,106,.4);display:flex;align-items:center;justify-content:center;">
+            <span style="width:12px;height:12px;border:2px solid #d4b66a;transform:rotate(45deg);display:block;"></span>
+          </span>
+          <span style="font:700 19px 'Spectral';color:#f6f2e9;">MEZON<span style="color:#b8923a;">·</span>AUDIT</span>
+        </div>
+        <p style="font-size:14px;line-height:1.65;margin:0;">Buxgalteriya hisobi, soliq va audit bo'yicha professional xizmatlar va kasbiy nashrlar.</p>
+      </div>
+      <div>
+        <div style="font:600 13px 'IBM Plex Sans';letter-spacing:.14em;color:#d4b66a;margin-bottom:18px;">XIZMATLAR</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:14px;">
+          <a href="index.html#xizmatlar" class="footer-link">Audit</a>
+          <a href="index.html#xizmatlar" class="footer-link">Buxgalteriya autsorsingi</a>
+          <a href="index.html#xizmatlar" class="footer-link">Soliq konsaltingi</a>
+          <a href="index.html#xizmatlar" class="footer-link">IFRS transformatsiya</a>
+        </div>
+      </div>
+      <div>
+        <div style="font:600 13px 'IBM Plex Sans';letter-spacing:.14em;color:#d4b66a;margin-bottom:18px;">MENYU</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:14px;">
+          <a href="index.html#yangiliklar" class="footer-link">Yangiliklar</a>
+          <a href="index.html#kitoblar" class="footer-link">Kitoblar</a>
+          <a href="index.html#biz" class="footer-link">Biz haqimizda</a>
+          <a href="index.html#aloqa" class="footer-link">Bog'lanish</a>
+        </div>
+      </div>
+      <div>
+        <div style="font:600 13px 'IBM Plex Sans';letter-spacing:.14em;color:#d4b66a;margin-bottom:18px;">ALOQA</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:14px;">
+          <span>+998 71 200 18 18</span>
+          <span>info@mezonaudit.uz</span>
+          <span>Toshkent, Amir Temur 108</span>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1240px;margin:48px auto 0;padding:22px 32px;border-top:1px solid rgba(246,242,233,.1);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px;color:rgba(246,242,233,.5);">
+      <span>© 2026 MEZON·AUDIT. Barcha huquqlar himoyalangan.</span>
+      <span>Maxfiylik siyosati · Foydalanish shartlari</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
