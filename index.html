@@ -6,571 +6,907 @@
   <title>MEZON·AUDIT — Professional Audit Xizmatlari</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    *{box-sizing:border-box;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
-    body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1a1f2b;background:#f6f2e9;-webkit-font-smoothing:antialiased;}
+    body{font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1a1f2b;background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;}
     a{color:inherit;text-decoration:none;}
+    img{display:block;max-width:100%;}
     ::selection{background:#0c2340;color:#d4b66a;}
-    img{display:block;}
 
-    .nav-link{padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s;}
-    .nav-link:hover{border-bottom-color:#b8923a;}
-    .nav-cta{background:#0c2340;color:#f6f2e9;padding:11px 22px;font-weight:600;transition:background .2s,color .2s;}
-    .nav-cta:hover{background:#b8923a;color:#0c2340;}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 36px;}
+    .section{padding:90px 0;}
+    .section-sm{padding:64px 0;}
+    .label{display:inline-block;font:600 11px/1 'IBM Plex Sans';letter-spacing:.22em;text-transform:uppercase;color:#b8923a;margin-bottom:18px;}
+    .h-xl{font-family:'Spectral',Georgia,serif;font-size:clamp(36px,5vw,58px);font-weight:700;line-height:1.1;color:#0c2340;}
+    .h-lg{font-family:'Spectral',Georgia,serif;font-size:clamp(28px,3.8vw,42px);font-weight:700;line-height:1.12;color:#0c2340;}
 
-    .btn-primary{background:#b8923a;color:#0c2340;padding:15px 30px;font-weight:600;font-size:15px;transition:background .2s;}
-    .btn-primary:hover{background:#d4b66a;}
-    .btn-outline{border:1px solid rgba(212,182,106,.45);color:#f6f2e9;padding:15px 30px;font-weight:600;font-size:15px;transition:all .2s;}
-    .btn-outline:hover{border-color:#d4b66a;background:rgba(212,182,106,.1);}
+    /* NAV */
+    .nav-bar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid #e8e4da;}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 36px;max-width:1180px;margin:0 auto;}
+    .nav-logo{display:flex;align-items:center;gap:12px;}
+    .nav-logo-icon{width:36px;height:36px;background:#0c2340;display:flex;align-items:center;justify-content:center;flex:none;}
+    .nav-logo-icon span{width:13px;height:13px;border:2.5px solid #d4b66a;transform:rotate(45deg);display:block;}
+    .nav-logo-name{font:700 20px/1 'Spectral';letter-spacing:.04em;color:#0c2340;}
+    .nav-logo-name em{color:#b8923a;font-style:normal;}
+    .nav-logo-sub{font:500 9px/1 'IBM Plex Sans';letter-spacing:.2em;color:#9a9182;margin-top:5px;}
+    .nav-links{display:flex;align-items:center;gap:30px;list-style:none;}
+    .nav-links a{font:500 15px 'IBM Plex Sans';color:#3a4252;border-bottom:2px solid transparent;padding-bottom:2px;transition:color .15s,border-color .15s;}
+    .nav-links a:hover{color:#0c2340;border-bottom-color:#b8923a;}
+    .nav-cta{background:#0c2340 !important;color:#f6f2e9 !important;padding:10px 22px;font-weight:600 !important;border:none !important;transition:background .18s !important;}
+    .nav-cta:hover{background:#b8923a !important;border-bottom-color:transparent !important;}
 
-    .service-card{background:#faf8f2;padding:36px 32px;position:relative;transition:background .2s;}
-    .service-card:hover{background:#fff;}
-    .svc-link{font-size:13px;font-weight:600;color:#0c2340;letter-spacing:.02em;transition:color .2s;}
-    .svc-link:hover{color:#b8923a;}
+    /* HERO */
+    .hero{background:#faf8f3;border-bottom:1px solid #e8e4da;}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:80px 0 90px;}
+    .hero-badge-inline{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid #e0d9cc;padding:10px 18px;margin-bottom:28px;}
+    .hero-badge-num{font:700 22px/1 'Spectral';color:#0c2340;}
+    .hero-badge-sep{width:1px;height:22px;background:#e0d9cc;}
+    .hero-badge-txt{font:500 13px 'IBM Plex Sans';color:#6a7284;}
+    .hero-img-col{position:relative;}
+    .hero-img{aspect-ratio:4/5;overflow:hidden;}
+    .hero-img img{width:100%;height:100%;object-fit:cover;}
+    .hero-float{position:absolute;left:-20px;bottom:28px;background:#0c2340;padding:22px 28px;box-shadow:0 20px 44px rgba(12,35,64,.3);}
+    .hero-float-num{font:700 36px/1 'Spectral';color:#d4b66a;}
+    .hero-float-txt{font-size:13px;color:rgba(246,242,233,.72);margin-top:7px;line-height:1.4;}
+    .btn-gold{display:inline-block;background:#b8923a;color:#fff;padding:14px 32px;font:600 15px 'IBM Plex Sans';border:none;cursor:pointer;transition:background .18s;}
+    .btn-gold:hover{background:#9a7730;}
+    .btn-outline{display:inline-block;border:2px solid #0c2340;color:#0c2340;padding:12px 30px;font:600 15px 'IBM Plex Sans';transition:all .18s;}
+    .btn-outline:hover{background:#0c2340;color:#f6f2e9;}
 
-    .featured-link{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));border:1px solid rgba(12,35,64,.12);background:#fff;margin-bottom:48px;transition:box-shadow .2s;}
-    .featured-link:hover{box-shadow:0 18px 44px rgba(12,35,64,.12);}
+    /* TRUST STRIP */
+    .trust-strip{background:#0a1e38;padding:15px 0;}
+    .trust-items{display:flex;flex-wrap:wrap;gap:10px 36px;justify-content:center;align-items:center;font:13px 'IBM Plex Sans';color:rgba(246,242,233,.6);letter-spacing:.03em;}
+    .trust-dot{color:#b8923a;font-size:9px;}
 
-    .pill{padding:9px 20px;border-radius:999px;font:600 13px 'IBM Plex Sans';cursor:pointer;border:1px solid rgba(12,35,64,.22);background:transparent;color:#0c2340;transition:all .15s;}
+    /* STORY */
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+    .story-img-wrap{position:relative;}
+    .story-img{aspect-ratio:3/4;overflow:hidden;}
+    .story-img img{width:100%;height:100%;object-fit:cover;}
+    .story-float{position:absolute;right:-24px;bottom:32px;background:#fff;border:1px solid #e8e4da;padding:20px 24px;box-shadow:0 16px 40px rgba(0,0,0,.1);}
+    .story-float-num{font:700 30px/1 'Spectral';color:#0c2340;}
+    .story-float-txt{font-size:12px;color:#7a8290;margin-top:6px;}
+    .checklist{display:flex;flex-direction:column;gap:12px;margin:24px 0 32px;}
+    .checklist li{display:flex;align-items:center;gap:12px;font-size:15px;color:#2a3240;list-style:none;}
+    .checklist li::before{content:'✓';color:#b8923a;font-size:16px;font-weight:700;flex:none;}
+    .client-tags{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:14px;}
+    .client-tag{background:#f5f3ed;border:1px solid #e4dfd4;padding:6px 14px;font:500 12px 'IBM Plex Sans';color:#4a5262;}
+    .client-tags-label{font:600 11px 'IBM Plex Sans';letter-spacing:.18em;color:#9a9182;margin-bottom:12px;}
+
+    /* SERVICES */
+    .svc-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid #e4dfd4;}
+    .svc-item{display:flex;gap:20px;padding:32px 36px;border-bottom:1px solid #e4dfd4;border-right:1px solid #e4dfd4;transition:background .15s;}
+    .svc-item:nth-child(even){border-right:none;}
+    .svc-item:nth-last-child(-n+2){border-bottom:none;}
+    .svc-item:hover{background:#faf8f3;}
+    .svc-num{font:700 14px 'Spectral';color:#b8923a;flex:none;margin-top:2px;}
+    .svc-body h3{font:600 18px/1.25 'Spectral';color:#0c2340;margin-bottom:8px;}
+    .svc-body p{font-size:14px;line-height:1.6;color:#6a7284;}
+
+    /* BOOKS */
+    .books-bg{background:#0c2340;}
+    .books-hdr{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:50px;flex-wrap:wrap;}
+    .books-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;}
+    .book-card{display:flex;flex-direction:column;}
+    .book-cover{aspect-ratio:3/4;background:#112a4a;border:1px solid rgba(212,182,106,.2);padding:22px 20px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .2s;box-shadow:0 12px 32px rgba(0,0,0,.3);}
+    .book-cover:hover{transform:translateY(-5px);}
+    .book-cat{font:600 10px 'IBM Plex Sans';letter-spacing:.2em;color:#d4b66a;}
+    .book-div{width:22px;height:1px;background:rgba(212,182,106,.4);}
+    .book-title{font:600 18px/1.3 'Spectral';color:#f6f2e9;}
+    .book-pub{font:400 11px 'IBM Plex Sans';color:rgba(246,242,233,.5);border-top:1px solid rgba(212,182,106,.2);padding-top:10px;}
+    .book-meta{margin-top:14px;}
+    .book-author{font-size:13px;color:rgba(246,242,233,.55);}
+    .book-link{display:inline-block;margin-top:8px;font:600 13px 'IBM Plex Sans';color:#d4b66a;border-bottom:1px solid rgba(212,182,106,.4);padding-bottom:2px;transition:color .15s;}
+    .book-link:hover{color:#f6f2e9;}
+
+    /* NEWS */
+    .news-featured{display:grid;grid-template-columns:1fr 1fr;border:1px solid #e4dfd4;margin-bottom:36px;transition:box-shadow .2s;}
+    .news-featured:hover{box-shadow:0 16px 44px rgba(12,35,64,.1);}
+    .nf-img{overflow:hidden;min-height:280px;}
+    .nf-img img{width:100%;height:100%;object-fit:cover;}
+    .nf-body{padding:44px 40px;display:flex;flex-direction:column;justify-content:center;}
+    .news-tag{display:inline-block;background:#0c2340;color:#d4b66a;font:600 10px 'IBM Plex Sans';letter-spacing:.12em;padding:5px 12px;}
+    .news-date{font-size:13px;color:#9a9182;margin-left:14px;}
+    .nf-title{font:700 clamp(22px,2.2vw,30px)/1.22 'Spectral';color:#0c2340;margin:14px 0 14px;}
+    .nf-excerpt{font-size:15px;line-height:1.65;color:#5a6472;margin-bottom:22px;}
+    .nf-more{font:600 13px 'IBM Plex Sans';color:#b8923a;}
+
+    .pill{padding:8px 20px;border-radius:999px;font:600 13px 'IBM Plex Sans';cursor:pointer;border:1px solid #d9d4c8;background:transparent;color:#3a4252;transition:all .15s;}
     .pill.active{background:#0c2340;color:#d4b66a;border-color:#0c2340;}
+    .news-filter{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
 
-    .news-card{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(12,35,64,.1);transition:transform .2s,box-shadow .2s;}
-    .news-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(12,35,64,.12);}
-    .read-link{font-size:13px;font-weight:600;color:#0c2340;transition:color .2s;}
+    .news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+    .news-card{display:flex;flex-direction:column;border:1px solid #e4dfd4;background:#fff;transition:transform .2s,box-shadow .2s;}
+    .news-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(12,35,64,.1);}
+    .nc-img{aspect-ratio:16/10;overflow:hidden;}
+    .nc-img img{width:100%;height:100%;object-fit:cover;}
+    .nc-body{padding:22px;flex:1;display:flex;flex-direction:column;}
+    .nc-meta{display:flex;gap:12px;align-items:center;margin-bottom:12px;}
+    .nc-cat{font:600 10px 'IBM Plex Sans';letter-spacing:.1em;color:#b8923a;text-transform:uppercase;}
+    .nc-date{font-size:12px;color:#9a9182;}
+    .nc-title{font:600 18px/1.3 'Spectral';color:#0c2340;flex:1;margin-bottom:14px;}
+    .read-link{font:600 13px 'IBM Plex Sans';color:#0c2340;transition:color .15s;}
     .read-link:hover{color:#b8923a;}
+    .nc-excerpt{font-size:14px;line-height:1.6;color:#6a7284;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+    .post-placeholder{aspect-ratio:16/10;background:repeating-linear-gradient(135deg,#e7e0d0,#e7e0d0 12px,#eee7d8 12px,#eee7d8 24px);display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;}
+    .post-placeholder span{font:500 11px ui-monospace,monospace;color:#9a8f78;}
+    .post-modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(8,26,48,.72);}
+    .post-modal.open{display:flex;}
+    .post-dialog{width:min(860px,100%);max-height:88vh;overflow:auto;background:#fff;border:1px solid #e4dfd4;box-shadow:0 30px 80px rgba(0,0,0,.28);}
+    .post-dialog-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:28px 30px;border-bottom:1px solid #e4dfd4;background:#faf8f3;}
+    .post-dialog-title{font:700 clamp(24px,3vw,34px)/1.15 'Spectral';color:#0c2340;margin-top:10px;}
+    .post-close{width:36px;height:36px;border:1px solid #d9d4c8;background:#fff;color:#0c2340;font-size:22px;line-height:1;cursor:pointer;flex:none;}
+    .post-dialog-body{padding:30px;}
+    .post-dialog-body img{width:100%;max-height:460px;object-fit:cover;margin-bottom:24px;border:1px solid #e4dfd4;}
+    .post-text{font-size:16px;line-height:1.75;color:#2a3240;white-space:pre-wrap;}
+    .post-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+    .post-actions a{display:inline-block;border:1px solid #d9d4c8;padding:10px 16px;font:600 13px 'IBM Plex Sans';color:#0c2340;}
 
-    .all-news-link{font-size:14px;font-weight:600;color:#0c2340;border-bottom:2px solid #b8923a;padding-bottom:4px;transition:color .2s;}
-    .all-news-link:hover{color:#b8923a;}
+    /* TESTIMONIALS */
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:50px;}
+    .testi-card{background:#fff;border:1px solid #e4dfd4;padding:32px 30px;}
+    .testi-stars{color:#b8923a;font-size:14px;margin-bottom:16px;}
+    .testi-quote{font:400 italic 16px/1.65 'Spectral';color:#2a3240;margin-bottom:24px;}
+    .testi-author{display:flex;align-items:center;gap:14px;}
+    .testi-av{width:44px;height:44px;background:#0c2340;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 16px 'Spectral';color:#d4b66a;flex:none;}
+    .testi-name{font:600 14px 'IBM Plex Sans';color:#0c2340;}
+    .testi-role{font-size:12px;color:#9a9182;margin-top:2px;}
 
-    .book-cover{aspect-ratio:3/4;background:#0c2340;border:1px solid rgba(212,182,106,.25);padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 14px 34px rgba(12,35,64,.2);transition:transform .2s;}
-    .book-cover:hover{transform:translateY(-6px);}
-    .book-link{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:#0c2340;border-bottom:1px solid #b8923a;padding-bottom:2px;transition:color .2s;}
-    .book-link:hover{color:#b8923a;}
+    /* CTA BANNER */
+    .cta-band{background:#0c2340;position:relative;overflow:hidden;}
+    .cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(700px 400px at 80% 50%,rgba(184,146,58,.18),transparent 60%);pointer-events:none;}
+    .cta-inner{position:relative;text-align:center;padding:80px 0;}
+    .cta-inner h2{font:700 clamp(28px,3.8vw,42px)/1.12 'Spectral';color:#f6f2e9;margin-bottom:16px;}
+    .cta-inner p{font-size:17px;color:rgba(246,242,233,.72);max-width:520px;margin:0 auto 36px;line-height:1.65;}
+    .cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+    .btn-outline-light{display:inline-block;border:2px solid rgba(212,182,106,.4);color:#f6f2e9;padding:12px 30px;font:600 15px 'IBM Plex Sans';transition:all .18s;}
+    .btn-outline-light:hover{border-color:#d4b66a;background:rgba(212,182,106,.1);}
 
-    .btn-submit{width:100%;background:#0c2340;color:#f6f2e9;padding:15px;font-size:15px;font-weight:600;border:none;cursor:pointer;transition:background .2s,color .2s;}
-    .btn-submit:hover{background:#b8923a;color:#0c2340;}
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+    .contact-details{display:flex;flex-direction:column;gap:22px;margin-top:32px;}
+    .cd-row{display:flex;gap:16px;align-items:flex-start;}
+    .cd-icon{width:44px;height:44px;background:#faf8f3;border:1px solid #e4dfd4;display:flex;align-items:center;justify-content:center;color:#b8923a;font-size:18px;flex:none;}
+    .cd-label{font:600 14px 'IBM Plex Sans';color:#0c2340;margin-bottom:3px;}
+    .cd-val{font-size:14px;color:#6a7284;line-height:1.5;}
+    .form-wrap{background:#faf8f3;border:1px solid #e4dfd4;padding:40px 38px;}
+    input,select,textarea{display:block;width:100%;padding:12px 14px;border:1px solid #d9d4c8;font:14px 'IBM Plex Sans';background:#fff;color:#1a1f2b;transition:border-color .15s;outline:none;font-family:inherit;}
+    input:focus,select:focus,textarea:focus{border-color:#b8923a;}
+    label{display:flex;flex-direction:column;gap:7px;font:600 13px 'IBM Plex Sans';color:#2a3240;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+    .form-field{margin-bottom:16px;}
+    .btn-submit{width:100%;background:#0c2340;color:#f6f2e9;padding:15px;font:600 15px 'IBM Plex Sans';border:none;cursor:pointer;transition:background .18s;}
+    .btn-submit:hover{background:#b8923a;}
 
-    .footer-link{transition:color .2s;}
-    .footer-link:hover{color:#f6f2e9;}
+    /* FOOTER */
+    footer{background:#081a30;color:rgba(246,242,233,.6);}
+    .footer-main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding:64px 0 0;}
+    .footer-brand p{font-size:14px;line-height:1.65;margin-top:14px;max-width:280px;}
+    .footer-col-title{font:600 12px 'IBM Plex Sans';letter-spacing:.14em;color:#d4b66a;margin-bottom:18px;text-transform:uppercase;}
+    .footer-col a,.footer-col span{display:block;font-size:14px;margin-bottom:11px;transition:color .15s;}
+    .footer-col a:hover{color:#f6f2e9;}
+    .footer-bottom{padding:22px 0;border-top:1px solid rgba(246,242,233,.1);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px;color:rgba(246,242,233,.45);margin-top:48px;}
 
-    input:focus,select:focus,textarea:focus{outline:none;border-color:#b8923a !important;background:#fff !important;}
-
-    @media(max-width:680px){
-      .form-two{grid-template-columns:1fr !important;}
+    @media(max-width:900px){
+      .hero-grid,.story-grid,.contact-grid,.news-featured{grid-template-columns:1fr;}
+      .hero-float{left:0;bottom:-14px;}
+      .story-float{right:-10px;}
+      .svc-grid{grid-template-columns:1fr;}
+      .svc-item{border-right:none;}
+      .svc-item:nth-last-child(-n+2){border-bottom:1px solid #e4dfd4;}
+      .svc-item:last-child{border-bottom:none;}
+      .footer-main{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:600px){
+      .wrap{padding:0 20px;}
+      .nav-inner{padding:14px 20px;}
+      .form-row{grid-template-columns:1fr;}
+      .footer-main{grid-template-columns:1fr;}
+      .hero-grid{padding:52px 0 68px;}
+      .post-dialog-head,.post-dialog-body{padding:22px;}
     }
   </style>
 </head>
 <body>
-<div style="background:#f6f2e9;">
 
-  <!-- TOP UTILITY BAR -->
-  <div style="background:#081a30;color:rgba(246,242,233,.72);font-size:13px;">
-    <div style="max-width:1240px;margin:0 auto;padding:9px 32px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;">
-      <div style="display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;">
-        <span style="display:flex;align-items:center;gap:7px;"><span style="color:#d4b66a;">✆</span> +998 71 200 18 18</span>
-        <span style="display:flex;align-items:center;gap:7px;"><span style="color:#d4b66a;">✉</span> info@mezonaudit.uz</span>
-      </div>
-      <div style="display:flex;gap:8px;align-items:center;">
-        <span style="color:#d4b66a;font-weight:600;">O'z</span><span style="opacity:.4;">Ru</span><span style="opacity:.4;">En</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- HEADER / NAV -->
-  <header style="position:sticky;top:0;z-index:50;background:rgba(246,242,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(12,35,64,.1);">
-    <div style="max-width:1240px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;">
-      <a href="index.html" style="display:flex;align-items:center;gap:12px;">
-        <span style="width:34px;height:34px;background:#0c2340;display:flex;align-items:center;justify-content:center;">
-          <span style="width:13px;height:13px;border:2px solid #d4b66a;transform:rotate(45deg);display:block;"></span>
-        </span>
-        <span style="display:flex;flex-direction:column;line-height:1;">
-          <span style="font:700 21px/1 'Spectral';letter-spacing:.04em;color:#0c2340;">MEZON<span style="color:#b8923a;">·</span>AUDIT</span>
-          <span style="font:500 9px/1 'IBM Plex Sans';letter-spacing:.22em;color:#7a8290;margin-top:5px;">PROFESSIONAL AUDIT XIZMATLARI</span>
-        </span>
-      </a>
-      <nav style="display:flex;flex-wrap:wrap;gap:28px;align-items:center;font-size:15px;font-weight:500;color:#2a3240;">
-        <a href="#xizmatlar" class="nav-link">Xizmatlar</a>
-        <a href="#yangiliklar" class="nav-link">Yangiliklar</a>
-        <a href="#kitoblar" class="nav-link">Kitoblar</a>
-        <a href="#biz" class="nav-link">Biz haqimizda</a>
-        <a href="#aloqa" class="nav-cta">Bog'lanish</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section style="background:#0c2340;position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background:radial-gradient(900px 500px at 85% -10%,rgba(184,146,58,.18),transparent 60%);pointer-events:none;"></div>
-    <div style="max-width:1240px;margin:0 auto;padding:84px 32px 92px;position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:56px;align-items:center;">
+<!-- NAV -->
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><span></span></div>
       <div>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
-          <span style="width:34px;height:1px;background:#b8923a;display:block;"></span>
-          <span style="font:600 12px 'IBM Plex Sans';letter-spacing:.26em;color:#d4b66a;">BUXGALTERIYA · SOLIQ · AUDIT</span>
+        <div class="nav-logo-name">MEZON<em>·</em>AUDIT</div>
+        <div class="nav-logo-sub">PROFESSIONAL AUDIT XIZMATLARI</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#xizmatlar">Xizmatlar</a></li>
+      <li><a href="#yangiliklar">Yangiliklar</a></li>
+      <li><a href="#kitoblar">Kitoblar</a></li>
+      <li><a href="#biz">Biz haqimizda</a></li>
+      <li><a href="#aloqa" class="nav-cta">Bog'lanish</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge-inline">
+          <span class="hero-badge-num">500+</span>
+          <span class="hero-badge-sep"></span>
+          <span class="hero-badge-txt">doimiy mijozlar · 2009 yildan beri</span>
         </div>
-        <h1 style="font:700 clamp(36px,5vw,58px)/1.08 'Spectral';color:#f6f2e9;margin:0 0 24px;letter-spacing:-.01em;">Biznesingiz uchun ishonchli <span style="color:#d4b66a;font-style:italic;">moliyaviy aniqlik</span></h1>
-        <p style="font-size:18px;line-height:1.65;color:rgba(246,242,233,.74);max-width:520px;margin:0 0 36px;">Buxgalteriya hisobi, soliq va audit bo'yicha professional yechimlar hamda mutaxassis mulohazalari. Korxonangizni xalqaro va milliy standartlar asosida himoyalaymiz.</p>
+        <h1 class="h-xl" style="margin-bottom:22px;">O'zbekistonda ishonchli <em style="font-style:italic;color:#b8923a;">moliyaviy aniqlik</em></h1>
+        <p style="font-size:18px;line-height:1.65;color:#5a6472;max-width:500px;margin-bottom:36px;">Buxgalteriya hisobi, soliq va audit bo'yicha professional yechimlar. Korxonangizni IFRS va milliy standartlar asosida himoyalaymiz.</p>
         <div style="display:flex;flex-wrap:wrap;gap:14px;">
-          <a href="#aloqa" class="btn-primary">Bepul konsultatsiya olish</a>
+          <a href="#aloqa" class="btn-gold">Bepul konsultatsiya olish</a>
           <a href="#xizmatlar" class="btn-outline">Xizmatlarni ko'rish →</a>
         </div>
       </div>
-      <div style="position:relative;">
-        <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#11294a,#11294a 14px,#142e54 14px,#142e54 28px);border:1px solid rgba(212,182,106,.22);overflow:hidden;">
-          <img src="ChatExport_2026-06-25/ChatExport_2026-06-25/photos/photo_14@02-01-2026_10-28-05.jpg" alt="Jamoamiz" style="width:100%;height:100%;object-fit:cover;opacity:.72;">
+      <div class="hero-img-col">
+        <div class="hero-img">
+          <img src="assets/photo_14@02-01-2026_10-28-05.jpg" alt="MEZON·AUDIT jamoasi">
         </div>
-        <div style="position:absolute;left:-22px;bottom:34px;background:#f6f2e9;padding:22px 26px;box-shadow:0 24px 50px rgba(0,0,0,.35);max-width:240px;">
-          <div style="font:700 38px/1 'Spectral';color:#0c2340;">15+</div>
-          <div style="font-size:13px;color:#5a6472;margin-top:6px;line-height:1.4;">yillik tajriba va 500 dan ortiq doimiy mijozlar ishonchi</div>
+        <div class="hero-float">
+          <div class="hero-float-num">15+</div>
+          <div class="hero-float-txt">yillik amaliy<br>tajriba</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CREDENTIALS STRIP -->
-  <div style="background:#0a2038;border-top:1px solid rgba(212,182,106,.18);">
-    <div style="max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;flex-wrap:wrap;gap:14px 40px;align-items:center;justify-content:center;font-size:13px;color:rgba(246,242,233,.6);letter-spacing:.04em;">
-      <span>Davlat litsenziyasi asosida faoliyat</span><span style="color:#b8923a;">◆</span>
-      <span>O'zbekiston Auditorlar palatasi a'zosi</span><span style="color:#b8923a;">◆</span>
-      <span>IFRS / ACCA sertifikatlangan mutaxassislar</span><span style="color:#b8923a;">◆</span>
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-items">
+      <span>Davlat litsenziyasi asosida faoliyat</span>
+      <span class="trust-dot">◆</span>
+      <span>O'zbekiston Auditorlar palatasi a'zosi</span>
+      <span class="trust-dot">◆</span>
+      <span>IFRS / ACCA sertifikatlangan mutaxassislar</span>
+      <span class="trust-dot">◆</span>
       <span>Konfidensiallik kafolati</span>
     </div>
   </div>
+</div>
 
-  <!-- SERVICES -->
-  <section id="xizmatlar" style="padding:96px 0;background:#f6f2e9;">
-    <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
-      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;margin-bottom:54px;">
-        <div style="max-width:620px;">
-          <div style="font:600 12px 'IBM Plex Sans';letter-spacing:.26em;color:#b8923a;margin-bottom:16px;">XIZMATLARIMIZ</div>
-          <h2 style="font:700 clamp(30px,3.6vw,42px)/1.12 'Spectral';color:#0c2340;margin:0;">To'liq moliyaviy xizmatlar spektri</h2>
+<!-- MY STORY -->
+<section class="section" id="biz" style="background:#fff;">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-img-wrap">
+        <div class="story-img">
+          <img src="assets/photo_102@17-06-2026_10-17-07.jpg" alt="Ibrohim Ahmadxonov">
         </div>
-        <p style="max-width:360px;font-size:15px;line-height:1.6;color:#5a6472;margin:0;">Har bir korxonaning ehtiyojiga moslashtirilgan, qonunchilik talablariga to'liq mos yechimlar.</p>
+        <div class="story-float">
+          <div class="story-float-num">40+</div>
+          <div class="story-float-txt">malakali auditorlar</div>
+        </div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:rgba(12,35,64,.1);border:1px solid rgba(12,35,64,.1);">
-        <div class="service-card">
-          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px;">
-            <span style="font:700 15px 'Spectral';color:#b8923a;">01</span>
-            <span style="flex:1;height:1px;background:rgba(12,35,64,.12);display:block;"></span>
-          </div>
-          <h3 style="font:600 21px/1.25 'Spectral';color:#0c2340;margin:0 0 12px;">Majburiy va ixtiyoriy audit</h3>
-          <p style="font-size:14.5px;line-height:1.6;color:#5a6472;margin:0 0 20px;">Moliyaviy hisobotning xalqaro (ISA) va milliy standartlarga muvofiqligini mustaqil tekshirish.</p>
-          <a href="#aloqa" class="svc-link">Batafsil ma'lumot →</a>
-        </div>
-        <div class="service-card">
-          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px;">
-            <span style="font:700 15px 'Spectral';color:#b8923a;">02</span>
-            <span style="flex:1;height:1px;background:rgba(12,35,64,.12);display:block;"></span>
-          </div>
-          <h3 style="font:600 21px/1.25 'Spectral';color:#0c2340;margin:0 0 12px;">Buxgalteriya autsorsingi</h3>
-          <p style="font-size:14.5px;line-height:1.6;color:#5a6472;margin:0 0 20px;">Buxgalteriya hisobini to'liq yuritish va boshqaruv hisobotlarini o'z vaqtida tayyorlash.</p>
-          <a href="#aloqa" class="svc-link">Batafsil ma'lumot →</a>
-        </div>
-        <div class="service-card">
-          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px;">
-            <span style="font:700 15px 'Spectral';color:#b8923a;">03</span>
-            <span style="flex:1;height:1px;background:rgba(12,35,64,.12);display:block;"></span>
-          </div>
-          <h3 style="font:600 21px/1.25 'Spectral';color:#0c2340;margin:0 0 12px;">Soliq konsaltingi</h3>
-          <p style="font-size:14.5px;line-height:1.6;color:#5a6472;margin:0 0 20px;">Soliq yukini optimallashtirish, deklaratsiyalarni tayyorlash va soliq rejalashtirish.</p>
-          <a href="#aloqa" class="svc-link">Batafsil ma'lumot →</a>
-        </div>
-        <div class="service-card">
-          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px;">
-            <span style="font:700 15px 'Spectral';color:#b8923a;">04</span>
-            <span style="flex:1;height:1px;background:rgba(12,35,64,.12);display:block;"></span>
-          </div>
-          <h3 style="font:600 21px/1.25 'Spectral';color:#0c2340;margin:0 0 12px;">Moliyaviy hisobotni tiklash</h3>
-          <p style="font-size:14.5px;line-height:1.6;color:#5a6472;margin:0 0 20px;">Hujjatlarni tartibga keltirish va buzilgan hisobni qayta tiklash xizmatlari.</p>
-          <a href="#aloqa" class="svc-link">Batafsil ma'lumot →</a>
-        </div>
-        <div class="service-card">
-          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px;">
-            <span style="font:700 15px 'Spectral';color:#b8923a;">05</span>
-            <span style="flex:1;height:1px;background:rgba(12,35,64,.12);display:block;"></span>
-          </div>
-          <h3 style="font:600 21px/1.25 'Spectral';color:#0c2340;margin:0 0 12px;">IFRS bo'yicha transformatsiya</h3>
-          <p style="font-size:14.5px;line-height:1.6;color:#5a6472;margin:0 0 20px;">Hisobotni xalqaro moliyaviy hisobot standartlariga muvofiq qayta tayyorlash.</p>
-          <a href="#aloqa" class="svc-link">Batafsil ma'lumot →</a>
-        </div>
-        <div class="service-card">
-          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px;">
-            <span style="font:700 15px 'Spectral';color:#b8923a;">06</span>
-            <span style="flex:1;height:1px;background:rgba(12,35,64,.12);display:block;"></span>
-          </div>
-          <h3 style="font:600 21px/1.25 'Spectral';color:#0c2340;margin:0 0 12px;">Malaka oshirish va treninglar</h3>
-          <p style="font-size:14.5px;line-height:1.6;color:#5a6472;margin:0 0 20px;">Buxgalter va auditorlar uchun amaliy o'quv dasturlari hamda seminarlar.</p>
-          <a href="#aloqa" class="svc-link">Batafsil ma'lumot →</a>
+      <div>
+        <div class="label">EKSPERT HAQIDA</div>
+        <h2 class="h-lg" style="margin-bottom:20px;">Mening hikoyam</h2>
+        <p style="font-size:16px;line-height:1.75;color:#4a5262;margin-bottom:16px;">Men Ibrohim Ahmadxonov — buxgalteriya hisobi, soliq va audit sohasida 15 yildan ortiq tajribaga ega auditor va moliyaviy maslahatchi. ACCA sertifikati hamda IFRS/ISA xalqaro standartlari bo'yicha ixtisoslashgan mutaxassismanm.</p>
+        <p style="font-size:16px;line-height:1.75;color:#4a5262;margin-bottom:16px;">Faoliyatim davomida 500 dan ortiq korporativ mijozlarga soliq rejalashtirish, moliyaviy audit va buxgalteriya xizmatlarini ko'rsatdim. Shuningdek, O'zbekiston va xorijiy tajribalar asosida bir qator professional nashrlar muallifiman.</p>
+        <p style="font-size:16px;line-height:1.75;color:#4a5262;margin-bottom:28px;">Maqsadim — har bir korxona uchun aniq, ishonchli va qonuniy moliyaviy yechimlar taqdim etish.</p>
+        <ul class="checklist">
+          <li>Mustaqil va xolis baholash</li>
+          <li>To'liq konfidensiallik kafolati</li>
+          <li>Har bir mijozga shaxsiy yondashuv</li>
+          <li>Xalqaro standartlar (IFRS, ISA, ACCA) bo'yicha ish</li>
+        </ul>
+        <div class="client-tags-label">HAMKORLIK QILGAN SOHALAR</div>
+        <div class="client-tags">
+          <span class="client-tag">Bank va moliya</span>
+          <span class="client-tag">Qurilish</span>
+          <span class="client-tag">Savdo va logistika</span>
+          <span class="client-tag">IT va texnologiya</span>
+          <span class="client-tag">Ishlab chiqarish</span>
+          <span class="client-tag">Farmatsevtika</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- NEWS -->
-  <section id="yangiliklar" style="padding:96px 0;background:#faf8f2;border-top:1px solid rgba(12,35,64,.07);">
-    <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
-      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;margin-bottom:46px;">
-        <div>
-          <div style="font:600 12px 'IBM Plex Sans';letter-spacing:.26em;color:#b8923a;margin-bottom:16px;">YANGILIKLAR VA TAHLIL</div>
-          <h2 style="font:700 clamp(30px,3.6vw,42px)/1.12 'Spectral';color:#0c2340;margin:0;">Qonunchilik va kasbiy mulohazalar</h2>
+<!-- SERVICES -->
+<section class="section-sm" id="xizmatlar" style="background:#faf8f3;border-top:1px solid #e8e4da;border-bottom:1px solid #e8e4da;">
+  <div class="wrap">
+    <div style="text-align:center;max-width:580px;margin:0 auto 52px;">
+      <div class="label">XIZMATLARIMIZ</div>
+      <h2 class="h-lg">To'liq moliyaviy xizmatlar spektri</h2>
+      <p style="font-size:16px;color:#6a7284;margin-top:14px;line-height:1.65;">Har bir korxonaning ehtiyojiga moslashtirilgan, qonunchilik talablariga to'liq mos yechimlar.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-item">
+        <div class="svc-num">01</div>
+        <div class="svc-body">
+          <h3>Majburiy va ixtiyoriy audit</h3>
+          <p>Moliyaviy hisobotning xalqaro (ISA) va milliy standartlarga muvofiqligini mustaqil tekshirish.</p>
         </div>
-        <a href="article.html" class="all-news-link">Barcha yangiliklar →</a>
       </div>
-
-      <!-- FEATURED -->
-      <a href="article.html" class="featured-link">
-        <div style="aspect-ratio:16/11;overflow:hidden;min-height:260px;">
-          <img src="ChatExport_2026-06-25/ChatExport_2026-06-25/photos/photo_102@17-06-2026_10-17-07.jpg" alt="Soliq oliy maktabi" style="width:100%;height:100%;object-fit:cover;">
+      <div class="svc-item">
+        <div class="svc-num">02</div>
+        <div class="svc-body">
+          <h3>Buxgalteriya autsorsingi</h3>
+          <p>Buxgalteriya hisobini to'liq yuritish va boshqaruv hisobotlarini o'z vaqtida tayyorlash.</p>
         </div>
-        <div style="padding:44px 42px;display:flex;flex-direction:column;justify-content:center;">
-          <div style="display:flex;gap:14px;align-items:center;margin-bottom:18px;">
-            <span style="background:#0c2340;color:#d4b66a;font-size:11px;font-weight:600;letter-spacing:.12em;padding:5px 12px;">SOLIQ</span>
-            <span style="font-size:13px;color:#8a8170;">17-iyun, 2026</span>
-          </div>
-          <h3 style="font:700 clamp(24px,2.4vw,32px)/1.2 'Spectral';color:#0c2340;margin:0 0 16px;">Soliq oliy maktabi: malakali kadrlar tayyorlanadimi?</h3>
-          <p style="font-size:16px;line-height:1.65;color:#5a6472;margin:0 0 24px;">PF-95-son Farmoni asosida Soliq qo'mitasi huzurida Soliq oliy maktabi tashkil etiladi. Biz bu haqda qiziqarli savollar va takliflarni bildiramiz.</p>
-          <span style="font-size:14px;font-weight:600;color:#b8923a;">Maqolani o'qish →</span>
+      </div>
+      <div class="svc-item">
+        <div class="svc-num">03</div>
+        <div class="svc-body">
+          <h3>Soliq konsaltingi</h3>
+          <p>Soliq yukini optimallashtirish, deklaratsiyalarni tayyorlash va soliq rejalashtirish.</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-num">04</div>
+        <div class="svc-body">
+          <h3>Moliyaviy hisobotni tiklash</h3>
+          <p>Hujjatlarni tartibga keltirish va buzilgan hisobni qayta tiklash xizmatlari.</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-num">05</div>
+        <div class="svc-body">
+          <h3>IFRS bo'yicha transformatsiya</h3>
+          <p>Hisobotni xalqaro moliyaviy hisobot standartlariga muvofiq qayta tayyorlash.</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-num">06</div>
+        <div class="svc-body">
+          <h3>Malaka oshirish va treninglar</h3>
+          <p>Buxgalter va auditorlar uchun amaliy o'quv dasturlari hamda seminarlar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section class="section books-bg" id="kitoblar">
+  <div class="wrap">
+    <div class="books-hdr">
+      <div>
+        <div class="label" style="color:#d4b66a;">KASBIY KUTUBXONA</div>
+        <h2 class="h-lg" style="color:#f6f2e9;margin-top:6px;">Professional kitoblar va qo'llanmalar</h2>
+        <p style="font-size:15px;color:rgba(246,242,233,.6);margin-top:12px;max-width:460px;line-height:1.6;">Mutaxassislarimiz tomonidan tayyorlangan buxgalteriya, soliq va audit bo'yicha nashrlar.</p>
+      </div>
+    </div>
+    <div class="books-grid">
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cat">SOLIQ</div>
+          <div class="book-div"></div>
+          <div class="book-title">Singapur QQS solig'i</div>
+          <div class="book-pub">MEZON nashriyoti</div>
+        </div>
+        <div class="book-meta">
+          <div class="book-author">Muallif: I. Ahmadxonov</div>
+          <a href="assets/ChatExport_2026-06-25/files/Singapur%20QQS%20solig'i.pdf" class="book-link">Batafsil / o'qish →</a>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cat">SOLIQ</div>
+          <div class="book-div"></div>
+          <div class="book-title">Foyda solig'i: Singapur tajribasi</div>
+          <div class="book-pub">MEZON nashriyoti</div>
+        </div>
+        <div class="book-meta">
+          <div class="book-author">Muallif: I. Ahmadxonov</div>
+          <a href="assets/ChatExport_2026-06-25/files/Foyda%20solig'i%20(Singapur).pdf" class="book-link">Batafsil / o'qish →</a>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cat">SOLIQ</div>
+          <div class="book-div"></div>
+          <div class="book-title">JSHDS: Singapur tajribasi</div>
+          <div class="book-pub">MEZON nashriyoti</div>
+        </div>
+        <div class="book-meta">
+          <div class="book-author">Muallif: I. Ahmadxonov</div>
+          <a href="assets/ChatExport_2026-06-25/files/JSHDS%20(Singapur).pdf" class="book-link">Batafsil / o'qish →</a>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cat">AUDIT</div>
+          <div class="book-div"></div>
+          <div class="book-title">Ichki audit (1-qism)</div>
+          <div class="book-pub">MEZON nashriyoti</div>
+        </div>
+        <div class="book-meta">
+          <div class="book-author">Muallif: I. Ahmadxonov</div>
+          <a href="assets/ChatExport_2026-06-25/files/Ichki%20audit%20(1%20qism).pdf" class="book-link">Batafsil / o'qish →</a>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cat">AUDIT</div>
+          <div class="book-div"></div>
+          <div class="book-title">Risk boshqaruvi asoslari</div>
+          <div class="book-pub">MEZON nashriyoti</div>
+        </div>
+        <div class="book-meta">
+          <div class="book-author">Muallif: I. Ahmadxonov</div>
+          <a href="assets/ChatExport_2026-06-25/files/Risk%20boshqaruvi.pdf" class="book-link">Batafsil / o'qish →</a>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cat">AUDIT</div>
+          <div class="book-div"></div>
+          <div class="book-title">Auditor fikri</div>
+          <div class="book-pub">MEZON nashriyoti</div>
+        </div>
+        <div class="book-meta">
+          <div class="book-author">Muallif: I. Ahmadxonov</div>
+          <a href="assets/ChatExport_2026-06-25/files/Auditor%20fikri.pdf" class="book-link">Batafsil / o'qish →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="section" id="yangiliklar" style="background:#fff;">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;flex-wrap:wrap;">
+      <div>
+        <div class="label">YANGILIKLAR VA TAHLIL</div>
+        <h2 class="h-lg">Qonunchilik va kasbiy mulohazalar</h2>
+      </div>
+      <a href="https://t.me/hisobvakitob" target="_blank" rel="noopener" style="font:600 14px 'IBM Plex Sans';color:#0c2340;border-bottom:2px solid #b8923a;padding-bottom:4px;">Telegram kanal →</a>
+    </div>
+
+    <a href="article.html" class="news-featured">
+      <div class="nf-img">
+        <img src="assets/photo_102@17-06-2026_10-17-07.jpg" alt="Soliq oliy maktabi">
+      </div>
+      <div class="nf-body">
+        <div><span class="news-tag">SOLIQ</span><span class="news-date">17-iyun, 2026</span></div>
+        <div class="nf-title">Soliq oliy maktabi: malakali kadrlar tayyorlanadimi?</div>
+        <p class="nf-excerpt">PF-95-son Farmoni asosida Soliq qo'mitasi huzurida Soliq oliy maktabi tashkil etiladi. Biz bu haqda qiziqarli savollar va takliflarni bildiramiz.</p>
+        <span class="nf-more">Maqolani o'qish →</span>
+      </div>
+    </a>
+
+    <div class="news-filter">
+      <button class="pill active" onclick="filterNews(this,'Barchasi')">Barchasi</button>
+      <button class="pill" onclick="filterNews(this,'Soliq')">Soliq</button>
+      <button class="pill" onclick="filterNews(this,'Audit')">Audit</button>
+      <button class="pill" onclick="filterNews(this,'Hisobot')">Hisobot</button>
+    </div>
+
+    <div class="news-grid" id="news-grid">
+      <a href="article.html" class="news-card" data-cat="Audit">
+        <div class="nc-img"><img src="assets/photo_103@17-06-2026_23-53-08.jpg" alt="Pensioner va ijtimoiy soliq"></div>
+        <div class="nc-body">
+          <div class="nc-meta"><span class="nc-cat">AUDIT</span><span class="nc-date">17-iyun, 2026</span></div>
+          <div class="nc-title">Pensioner xodimdan 12% ijtimoiy soliq: mantiqiy tahlil</div>
+          <span class="read-link">O'qish →</span>
         </div>
       </a>
+      <a href="article.html" class="news-card" data-cat="Hisobot">
+        <div class="nc-img"><img src="assets/photo_101@10-06-2026_23-44-42.jpg" alt="Giperinflyatsiya 2026"></div>
+        <div class="nc-body">
+          <div class="nc-meta"><span class="nc-cat">HISOBOT</span><span class="nc-date">10-iyun, 2026</span></div>
+          <div class="nc-title">2026 yil iyun holatiga ko'ra giperinflyatsiyali mamlakatlar ro'yxati</div>
+          <span class="read-link">O'qish →</span>
+        </div>
+      </a>
+      <a href="article.html" class="news-card" data-cat="Soliq">
+        <div class="nc-img"><img src="assets/photo_72@29-04-2026_19-06-03.jpg" alt="Dachalar solig'i"></div>
+        <div class="nc-body">
+          <div class="nc-meta"><span class="nc-cat">SOLIQ</span><span class="nc-date">29-aprel, 2026</span></div>
+          <div class="nc-title">Dachalar solig'i: sabab va oqibatlar — uch tomonlama tahlil</div>
+          <span class="read-link">O'qish →</span>
+        </div>
+      </a>
+      <a href="article.html" class="news-card" data-cat="Audit">
+        <div class="nc-img" style="aspect-ratio:16/10;background:repeating-linear-gradient(135deg,#e7e0d0,#e7e0d0 12px,#eee7d8 12px,#eee7d8 24px);display:flex;align-items:center;justify-content:center;">
+          <span style="font:500 11px ui-monospace,monospace;color:#9a8f78;">audit bozori tahlili</span>
+        </div>
+        <div class="nc-body">
+          <div class="nc-meta"><span class="nc-cat">AUDIT</span><span class="nc-date">14-may, 2026</span></div>
+          <div class="nc-title">O'zbekiston audit bozori 2025: eng qiziqarli faktlar va risklar</div>
+          <span class="read-link">O'qish →</span>
+        </div>
+      </a>
+      <a href="article.html" class="news-card" data-cat="Hisobot">
+        <div class="nc-img"><img src="assets/photo_86@16-05-2026_10-21-50.jpg" alt="Hisob siyosati"></div>
+        <div class="nc-body">
+          <div class="nc-meta"><span class="nc-cat">HISOBOT</span><span class="nc-date">16-may, 2026</span></div>
+          <div class="nc-title">Nima uchun hisob siyosati jonsiz? Amaliy tahlil</div>
+          <span class="read-link">O'qish →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 
-      <!-- FILTER PILLS -->
-      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;">
-        <button class="pill active" onclick="filterNews(this,'Barchasi')">Barchasi</button>
-        <button class="pill" onclick="filterNews(this,'Soliq')">Soliq</button>
-        <button class="pill" onclick="filterNews(this,'Audit')">Audit</button>
-        <button class="pill" onclick="filterNews(this,'Hisobot')">Hisobot</button>
+<!-- TESTIMONIALS -->
+<section class="section" style="background:#faf8f3;border-top:1px solid #e8e4da;">
+  <div class="wrap">
+    <div style="text-align:center;max-width:560px;margin:0 auto;">
+      <div class="label">MIJOZLAR FIKRI</div>
+      <h2 class="h-lg">Bizning mijozlar nima deydi?</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"MEZON·AUDIT jamoasi buxgalteriyamizni to'liq tartibga keltirdi. Soliq tekshiruvi chog'ida hech qanday muammo bo'lmadi — bu katta yutuq edi."</p>
+        <div class="testi-author">
+          <div class="testi-av">A</div>
+          <div>
+            <div class="testi-name">Alisher Rahimov</div>
+            <div class="testi-role">Moliya direktori, Qurilish korporatsiyasi</div>
+          </div>
+        </div>
       </div>
-
-      <!-- NEWS GRID -->
-      <div id="news-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px;">
-
-        <a href="article.html" class="news-card" data-cat="Audit">
-          <div style="aspect-ratio:16/10;overflow:hidden;">
-            <img src="ChatExport_2026-06-25/ChatExport_2026-06-25/photos/photo_103@17-06-2026_23-53-08.jpg" alt="Pensioner va ijtimoiy soliq" style="width:100%;height:100%;object-fit:cover;">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"IFRS bo'yicha transformatsiyani o'z vaqtida va yuqori sifatda bajardi. Xalqaro investorlar bilan muzokaralarda moliyaviy hisobotimiz asosiy afzalligimiz bo'ldi."</p>
+        <div class="testi-author">
+          <div class="testi-av">N</div>
+          <div>
+            <div class="testi-name">Nilufar Yusupova</div>
+            <div class="testi-role">Bosh direktor, IT kompaniyasi</div>
           </div>
-          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1;">
-            <div style="display:flex;gap:12px;align-items:center;margin-bottom:14px;">
-              <span style="font-size:11px;font-weight:600;letter-spacing:.1em;color:#b8923a;">AUDIT</span>
-              <span style="font-size:12px;color:#9a9182;">17-iyun, 2026</span>
-            </div>
-            <h4 style="font:600 19px/1.3 'Spectral';color:#0c2340;margin:0 0 16px;flex:1;">Pensioner xodimdan 12% ijtimoiy soliq: mantiqiy tahlil</h4>
-            <span class="read-link">O'qish →</span>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Soliq konsaltingi orqali yillik soliq yukimizni sezilarli darajada optimallashtirdi. Har doim yangiliklar va o'zgarishlar haqida xabardor bo'lamiz."</p>
+        <div class="testi-author">
+          <div class="testi-av">S</div>
+          <div>
+            <div class="testi-name">Sardor Mirzayev</div>
+            <div class="testi-role">Tadbirkor, Savdo kompaniyasi</div>
           </div>
-        </a>
-
-        <a href="article.html" class="news-card" data-cat="Hisobot">
-          <div style="aspect-ratio:16/10;overflow:hidden;">
-            <img src="ChatExport_2026-06-25/ChatExport_2026-06-25/photos/photo_101@10-06-2026_23-44-42.jpg" alt="Giperinflyatsiya 2026" style="width:100%;height:100%;object-fit:cover;">
-          </div>
-          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1;">
-            <div style="display:flex;gap:12px;align-items:center;margin-bottom:14px;">
-              <span style="font-size:11px;font-weight:600;letter-spacing:.1em;color:#b8923a;">HISOBOT</span>
-              <span style="font-size:12px;color:#9a9182;">10-iyun, 2026</span>
-            </div>
-            <h4 style="font:600 19px/1.3 'Spectral';color:#0c2340;margin:0 0 16px;flex:1;">2026 yil iyun holatiga ko'ra giperinflyatsiyali mamlakatlar ro'yxati</h4>
-            <span class="read-link">O'qish →</span>
-          </div>
-        </a>
-
-        <a href="article.html" class="news-card" data-cat="Soliq">
-          <div style="aspect-ratio:16/10;overflow:hidden;">
-            <img src="ChatExport_2026-06-25/ChatExport_2026-06-25/photos/photo_72@29-04-2026_19-06-03.jpg" alt="Dachalar solig'i" style="width:100%;height:100%;object-fit:cover;">
-          </div>
-          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1;">
-            <div style="display:flex;gap:12px;align-items:center;margin-bottom:14px;">
-              <span style="font-size:11px;font-weight:600;letter-spacing:.1em;color:#b8923a;">SOLIQ</span>
-              <span style="font-size:12px;color:#9a9182;">29-aprel, 2026</span>
-            </div>
-            <h4 style="font:600 19px/1.3 'Spectral';color:#0c2340;margin:0 0 16px;flex:1;">Dachalar solig'i: sabab va oqibatlar — uch tomonlama tahlil</h4>
-            <span class="read-link">O'qish →</span>
-          </div>
-        </a>
-
-        <a href="article.html" class="news-card" data-cat="Audit">
-          <div style="aspect-ratio:16/10;background:repeating-linear-gradient(135deg,#e7e0d0,#e7e0d0 12px,#eee7d8 12px,#eee7d8 24px);display:flex;align-items:center;justify-content:center;">
-            <span style="font:500 11px ui-monospace,monospace;color:#9a8f78;">audit bozori tahlili</span>
-          </div>
-          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1;">
-            <div style="display:flex;gap:12px;align-items:center;margin-bottom:14px;">
-              <span style="font-size:11px;font-weight:600;letter-spacing:.1em;color:#b8923a;">AUDIT</span>
-              <span style="font-size:12px;color:#9a9182;">14-may, 2026</span>
-            </div>
-            <h4 style="font:600 19px/1.3 'Spectral';color:#0c2340;margin:0 0 16px;flex:1;">O'zbekiston audit bozori 2025: eng qiziqarli faktlar va risklar</h4>
-            <span class="read-link">O'qish →</span>
-          </div>
-        </a>
-
-        <a href="article.html" class="news-card" data-cat="Hisobot">
-          <div style="aspect-ratio:16/10;overflow:hidden;">
-            <img src="ChatExport_2026-06-25/ChatExport_2026-06-25/photos/photo_86@16-05-2026_10-21-50.jpg" alt="Hisob siyosati" style="width:100%;height:100%;object-fit:cover;">
-          </div>
-          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1;">
-            <div style="display:flex;gap:12px;align-items:center;margin-bottom:14px;">
-              <span style="font-size:11px;font-weight:600;letter-spacing:.1em;color:#b8923a;">HISOBOT</span>
-              <span style="font-size:12px;color:#9a9182;">16-may, 2026</span>
-            </div>
-            <h4 style="font:600 19px/1.3 'Spectral';color:#0c2340;margin:0 0 16px;flex:1;">Nima uchun hisob siyosati jonsiz? Amaliy tahlil</h4>
-            <span class="read-link">O'qish →</span>
-          </div>
-        </a>
-
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- BOOKS -->
-  <section id="kitoblar" style="padding:96px 0;background:#f6f2e9;border-top:1px solid rgba(12,35,64,.07);">
-    <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
-      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;margin-bottom:54px;">
-        <div style="max-width:640px;">
-          <div style="font:600 12px 'IBM Plex Sans';letter-spacing:.26em;color:#b8923a;margin-bottom:16px;">KASBIY KUTUBXONA</div>
-          <h2 style="font:700 clamp(30px,3.6vw,42px)/1.12 'Spectral';color:#0c2340;margin:0 0 14px;">Professional kitoblar va qo'llanmalar</h2>
-          <p style="font-size:15px;line-height:1.6;color:#5a6472;margin:0;">Buxgalteriya hisobi, soliq va audit bo'yicha mutaxassislarimiz tomonidan tayyorlangan nashrlar.</p>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:34px;">
-
-        <div style="display:flex;flex-direction:column;">
-          <div class="book-cover">
-            <div style="font:600 10px/1 'IBM Plex Sans';letter-spacing:.2em;color:#d4b66a;">SOLIQ</div>
-            <div style="width:26px;height:1px;background:rgba(212,182,106,.5);display:block;"></div>
-            <div style="font:600 21px/1.28 'Spectral';color:#f6f2e9;">Singapur QQS solig'i</div>
-            <div style="border-top:1px solid rgba(212,182,106,.28);padding-top:12px;font:400 12px 'IBM Plex Sans';color:rgba(246,242,233,.62);">MEZON nashriyoti</div>
-          </div>
-          <div style="padding-top:18px;">
-            <div style="font-size:13px;color:#5a6472;">Muallif: I. Ahmadxonov</div>
-            <a href="#aloqa" class="book-link">Batafsil / xarid →</a>
-          </div>
-        </div>
-
-        <div style="display:flex;flex-direction:column;">
-          <div class="book-cover">
-            <div style="font:600 10px/1 'IBM Plex Sans';letter-spacing:.2em;color:#d4b66a;">SOLIQ</div>
-            <div style="width:26px;height:1px;background:rgba(212,182,106,.5);display:block;"></div>
-            <div style="font:600 21px/1.28 'Spectral';color:#f6f2e9;">Foyda solig'i: Singapur tajribasi</div>
-            <div style="border-top:1px solid rgba(212,182,106,.28);padding-top:12px;font:400 12px 'IBM Plex Sans';color:rgba(246,242,233,.62);">MEZON nashriyoti</div>
-          </div>
-          <div style="padding-top:18px;">
-            <div style="font-size:13px;color:#5a6472;">Muallif: I. Ahmadxonov</div>
-            <a href="#aloqa" class="book-link">Batafsil / xarid →</a>
-          </div>
-        </div>
-
-        <div style="display:flex;flex-direction:column;">
-          <div class="book-cover">
-            <div style="font:600 10px/1 'IBM Plex Sans';letter-spacing:.2em;color:#d4b66a;">SOLIQ</div>
-            <div style="width:26px;height:1px;background:rgba(212,182,106,.5);display:block;"></div>
-            <div style="font:600 21px/1.28 'Spectral';color:#f6f2e9;">JSHDS: Singapur tajribasi</div>
-            <div style="border-top:1px solid rgba(212,182,106,.28);padding-top:12px;font:400 12px 'IBM Plex Sans';color:rgba(246,242,233,.62);">MEZON nashriyoti</div>
-          </div>
-          <div style="padding-top:18px;">
-            <div style="font-size:13px;color:#5a6472;">Muallif: I. Ahmadxonov</div>
-            <a href="#aloqa" class="book-link">Batafsil / xarid →</a>
-          </div>
-        </div>
-
-        <div style="display:flex;flex-direction:column;">
-          <div class="book-cover">
-            <div style="font:600 10px/1 'IBM Plex Sans';letter-spacing:.2em;color:#d4b66a;">AUDIT</div>
-            <div style="width:26px;height:1px;background:rgba(212,182,106,.5);display:block;"></div>
-            <div style="font:600 21px/1.28 'Spectral';color:#f6f2e9;">Ichki audit (1-qism)</div>
-            <div style="border-top:1px solid rgba(212,182,106,.28);padding-top:12px;font:400 12px 'IBM Plex Sans';color:rgba(246,242,233,.62);">MEZON nashriyoti</div>
-          </div>
-          <div style="padding-top:18px;">
-            <div style="font-size:13px;color:#5a6472;">Muallif: I. Ahmadxonov</div>
-            <a href="#aloqa" class="book-link">Batafsil / xarid →</a>
-          </div>
-        </div>
-
-        <div style="display:flex;flex-direction:column;">
-          <div class="book-cover">
-            <div style="font:600 10px/1 'IBM Plex Sans';letter-spacing:.2em;color:#d4b66a;">AUDIT</div>
-            <div style="width:26px;height:1px;background:rgba(212,182,106,.5);display:block;"></div>
-            <div style="font:600 21px/1.28 'Spectral';color:#f6f2e9;">Risk boshqaruvi asoslari</div>
-            <div style="border-top:1px solid rgba(212,182,106,.28);padding-top:12px;font:400 12px 'IBM Plex Sans';color:rgba(246,242,233,.62);">MEZON nashriyoti</div>
-          </div>
-          <div style="padding-top:18px;">
-            <div style="font-size:13px;color:#5a6472;">Muallif: I. Ahmadxonov</div>
-            <a href="#aloqa" class="book-link">Batafsil / xarid →</a>
-          </div>
-        </div>
-
-        <div style="display:flex;flex-direction:column;">
-          <div class="book-cover">
-            <div style="font:600 10px/1 'IBM Plex Sans';letter-spacing:.2em;color:#d4b66a;">AUDIT</div>
-            <div style="width:26px;height:1px;background:rgba(212,182,106,.5);display:block;"></div>
-            <div style="font:600 21px/1.28 'Spectral';color:#f6f2e9;">Auditor fikri</div>
-            <div style="border-top:1px solid rgba(212,182,106,.28);padding-top:12px;font:400 12px 'IBM Plex Sans';color:rgba(246,242,233,.62);">MEZON nashriyoti</div>
-          </div>
-          <div style="padding-top:18px;">
-            <div style="font-size:13px;color:#5a6472;">Muallif: I. Ahmadxonov</div>
-            <a href="#aloqa" class="book-link">Batafsil / xarid →</a>
-          </div>
-        </div>
-
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2>Bepul konsultatsiyaga yoziling</h2>
+      <p>So'rovingizni qoldiring — mutaxassisimiz 24 soat ichida siz bilan bog'lanadi va biznesingiz uchun mos yechimni taklif qiladi.</p>
+      <div class="cta-btns">
+        <a href="#aloqa" class="btn-gold">Hoziroq bog'lanish</a>
+        <a href="#xizmatlar" class="btn-outline-light">Xizmatlarni ko'rish</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="biz" style="padding:100px 0;background:#0c2340;position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background:radial-gradient(700px 400px at 15% 110%,rgba(184,146,58,.16),transparent 60%);pointer-events:none;"></div>
-    <div style="max-width:1240px;margin:0 auto;padding:0 32px;position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:64px;align-items:center;">
+<!-- CONTACT -->
+<section class="section" id="aloqa" style="background:#fff;">
+  <div class="wrap">
+    <div class="contact-grid">
       <div>
-        <div style="font:600 12px 'IBM Plex Sans';letter-spacing:.26em;color:#d4b66a;margin-bottom:18px;">BIZ HAQIMIZDA</div>
-        <h2 style="font:700 clamp(28px,3.4vw,40px)/1.16 'Spectral';color:#f6f2e9;margin:0 0 22px;">Aniqlik, mas'uliyat va kasbiy mulohaza</h2>
-        <p style="font-size:16px;line-height:1.7;color:rgba(246,242,233,.72);margin:0 0 18px;">MEZON·AUDIT — buxgalteriya hisobi, soliq va audit sohasida 15 yildan ortiq tajribaga ega mustaqil auditorlik tashkiloti. Biz korxonalarga moliyaviy shaffoflikni ta'minlash va xavflarni kamaytirishda yordam beramiz.</p>
-        <p style="font-size:16px;line-height:1.7;color:rgba(246,242,233,.72);margin:0 0 28px;">Jamoamiz xalqaro standartlar (IFRS, ISA) bo'yicha sertifikatlangan mutaxassislardan tashkil topgan.</p>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <div style="display:flex;gap:12px;align-items:center;font-size:15px;color:#f6f2e9;"><span style="color:#b8923a;">✓</span> Mustaqil va xolis baholash</div>
-          <div style="display:flex;gap:12px;align-items:center;font-size:15px;color:#f6f2e9;"><span style="color:#b8923a;">✓</span> To'liq konfidensiallik kafolati</div>
-          <div style="display:flex;gap:12px;align-items:center;font-size:15px;color:#f6f2e9;"><span style="color:#b8923a;">✓</span> Har bir mijozga shaxsiy yondashuv</div>
+        <div class="label">BOG'LANISH</div>
+        <h2 class="h-lg" style="margin-bottom:14px;">Mutaxassisimiz bilan gaplashing</h2>
+        <p style="font-size:16px;color:#6a7284;line-height:1.65;max-width:400px;">Savol yoki so'rovingizni yuboring — 24 soat ichida javob beramiz.</p>
+        <div class="contact-details">
+          <div class="cd-row">
+            <div class="cd-icon">⌖</div>
+            <div><div class="cd-label">Manzil</div><div class="cd-val">Toshkent sh., Amir Temur ko'chasi 108, 4-qavat</div></div>
+          </div>
+          <div class="cd-row">
+            <div class="cd-icon">✆</div>
+            <div><div class="cd-label">Telefon</div><div class="cd-val">+998 71 200 18 18 · +998 90 123 45 67</div></div>
+          </div>
+          <div class="cd-row">
+            <div class="cd-icon">✉</div>
+            <div><div class="cd-label">Email</div><div class="cd-val">info@mezonaudit.uz</div></div>
+          </div>
+          <div class="cd-row">
+            <div class="cd-icon">TG</div>
+            <div><div class="cd-label">Telegram kanal</div><div class="cd-val"><a href="https://t.me/hisobvakitob" target="_blank" rel="noopener">t.me/hisobvakitob</a></div></div>
+          </div>
+          <div class="cd-row">
+            <div class="cd-icon">in</div>
+            <div><div class="cd-label">LinkedIn</div><div class="cd-val"><a href="https://www.linkedin.com/in/ibrokhim-akhmadkhonov-b4b2aab8/?locale=ru" target="_blank" rel="noopener">Ibrohim Ahmadxonov</a></div></div>
+          </div>
+          <div class="cd-row">
+            <div class="cd-icon">⏱</div>
+            <div><div class="cd-label">Ish vaqti</div><div class="cd-val">Dush–Juma, 09:00 – 18:00</div></div>
+          </div>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(212,182,106,.22);border:1px solid rgba(212,182,106,.22);">
-        <div style="background:#0c2340;padding:38px 30px;">
-          <div style="font:700 clamp(32px,3.6vw,46px)/1 'Spectral';color:#d4b66a;">15+</div>
-          <div style="font-size:14px;color:rgba(246,242,233,.7);margin-top:12px;line-height:1.4;">yillik amaliy tajriba</div>
-        </div>
-        <div style="background:#0c2340;padding:38px 30px;">
-          <div style="font:700 clamp(32px,3.6vw,46px)/1 'Spectral';color:#d4b66a;">500+</div>
-          <div style="font-size:14px;color:rgba(246,242,233,.7);margin-top:12px;line-height:1.4;">doimiy mijozlar</div>
-        </div>
-        <div style="background:#0c2340;padding:38px 30px;">
-          <div style="font:700 clamp(32px,3.6vw,46px)/1 'Spectral';color:#d4b66a;">40+</div>
-          <div style="font-size:14px;color:rgba(246,242,233,.7);margin-top:12px;line-height:1.4;">malakali auditorlar</div>
-        </div>
-        <div style="background:#0c2340;padding:38px 30px;">
-          <div style="font:700 clamp(32px,3.6vw,46px)/1 'Spectral';color:#d4b66a;">1 200+</div>
-          <div style="font-size:14px;color:rgba(246,242,233,.7);margin-top:12px;line-height:1.4;">yakunlangan loyihalar</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="aloqa" style="padding:96px 0;background:#faf8f2;">
-    <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:start;">
       <div>
-        <div style="font:600 12px 'IBM Plex Sans';letter-spacing:.26em;color:#b8923a;margin-bottom:18px;">BOG'LANISH</div>
-        <h2 style="font:700 clamp(28px,3.4vw,40px)/1.14 'Spectral';color:#0c2340;margin:0 0 20px;">Bepul konsultatsiyaga yoziling</h2>
-        <p style="font-size:16px;line-height:1.65;color:#5a6472;margin:0 0 36px;max-width:440px;">So'rovingizni qoldiring — mutaxassisimiz 24 soat ichida siz bilan bog'lanadi va biznesingiz uchun mos yechimni taklif qiladi.</p>
-        <div style="display:flex;flex-direction:column;gap:24px;">
-          <div style="display:flex;gap:16px;align-items:flex-start;">
-            <span style="width:42px;height:42px;flex:none;background:#0c2340;color:#d4b66a;display:flex;align-items:center;justify-content:center;font-size:17px;">⌖</span>
-            <div>
-              <div style="font-weight:600;color:#0c2340;margin-bottom:3px;">Manzil</div>
-              <div style="font-size:14px;color:#5a6472;">Toshkent sh., Amir Temur ko'chasi 108, 4-qavat</div>
-            </div>
+        <div class="form-wrap">
+          <div id="form-success" style="display:none;text-align:center;padding:36px 8px;">
+            <div style="width:60px;height:60px;margin:0 auto 22px;background:#0c2340;color:#d4b66a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;">✓</div>
+            <h3 style="font:700 24px 'Spectral';color:#0c2340;margin-bottom:12px;">So'rovingiz qabul qilindi</h3>
+            <p style="font-size:15px;color:#6a7284;line-height:1.6;margin-bottom:24px;">Tez orada mutaxassisimiz siz bilan bog'lanadi.</p>
+            <button onclick="resetForm()" style="background:transparent;border:1px solid #d9d4c8;color:#0c2340;padding:11px 24px;font:600 14px 'IBM Plex Sans';cursor:pointer;">Yangi so'rov yuborish</button>
           </div>
-          <div style="display:flex;gap:16px;align-items:flex-start;">
-            <span style="width:42px;height:42px;flex:none;background:#0c2340;color:#d4b66a;display:flex;align-items:center;justify-content:center;font-size:17px;">✆</span>
-            <div>
-              <div style="font-weight:600;color:#0c2340;margin-bottom:3px;">Telefon</div>
-              <div style="font-size:14px;color:#5a6472;">+998 71 200 18 18 · +998 90 123 45 67</div>
+          <form id="contact-form" onsubmit="submitForm(event)">
+            <div class="form-row">
+              <label>Ism familiya<input name="name" required placeholder="Ismingiz"></label>
+              <label>Kompaniya<input name="company" placeholder="Tashkilot nomi"></label>
             </div>
-          </div>
-          <div style="display:flex;gap:16px;align-items:flex-start;">
-            <span style="width:42px;height:42px;flex:none;background:#0c2340;color:#d4b66a;display:flex;align-items:center;justify-content:center;font-size:17px;">⏱</span>
-            <div>
-              <div style="font-weight:600;color:#0c2340;margin-bottom:3px;">Ish vaqti</div>
-              <div style="font-size:14px;color:#5a6472;">Dush–Juma, 09:00 – 18:00</div>
+            <div class="form-row">
+              <label>Telefon<input name="phone" required placeholder="+998 __ ___ __ __"></label>
+              <label>Email<input name="email" type="email" placeholder="email@kompaniya.uz"></label>
             </div>
-          </div>
+            <div class="form-field">
+              <label>Xizmat turi
+                <select name="service">
+                  <option>Audit xizmatlari</option>
+                  <option>Buxgalteriya autsorsingi</option>
+                  <option>Soliq konsaltingi</option>
+                  <option>Moliyaviy hisobotni tiklash</option>
+                  <option>IFRS transformatsiya</option>
+                  <option>Malaka oshirish / treninglar</option>
+                </select>
+              </label>
+            </div>
+            <div class="form-field">
+              <label>Xabar
+                <textarea name="message" rows="3" placeholder="So'rovingizni qisqacha yozing" style="resize:vertical;"></textarea>
+              </label>
+            </div>
+            <button type="submit" class="btn-submit">So'rov yuborish</button>
+          </form>
         </div>
-      </div>
-
-      <div style="background:#fff;border:1px solid rgba(12,35,64,.12);padding:40px 38px;box-shadow:0 18px 44px rgba(12,35,64,.08);">
-        <div id="form-success" style="display:none;text-align:center;padding:36px 8px;">
-          <div style="width:60px;height:60px;margin:0 auto 22px;background:#0c2340;color:#d4b66a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;">✓</div>
-          <h3 style="font:700 24px 'Spectral';color:#0c2340;margin:0 0 12px;">So'rovingiz qabul qilindi</h3>
-          <p style="font-size:15px;color:#5a6472;line-height:1.6;margin:0 0 24px;">Tez orada mutaxassisimiz siz bilan bog'lanadi. Murojaatingiz uchun rahmat.</p>
-          <button onclick="resetForm()" style="background:transparent;border:1px solid rgba(12,35,64,.25);color:#0c2340;padding:11px 24px;font-weight:600;font-size:14px;cursor:pointer;font-family:inherit;">Yangi so'rov yuborish</button>
-        </div>
-        <form id="contact-form" onsubmit="submitForm(event)">
-          <div class="form-two" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-            <label style="display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:600;color:#2a3240;">Ism familiya
-              <input name="name" required placeholder="Ismingiz" style="padding:12px 14px;border:1px solid rgba(12,35,64,.2);font-size:14px;font-family:inherit;background:#faf8f2;">
-            </label>
-            <label style="display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:600;color:#2a3240;">Kompaniya
-              <input name="company" placeholder="Tashkilot nomi" style="padding:12px 14px;border:1px solid rgba(12,35,64,.2);font-size:14px;font-family:inherit;background:#faf8f2;">
-            </label>
-          </div>
-          <div class="form-two" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-            <label style="display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:600;color:#2a3240;">Telefon
-              <input name="phone" required placeholder="+998 __ ___ __ __" style="padding:12px 14px;border:1px solid rgba(12,35,64,.2);font-size:14px;font-family:inherit;background:#faf8f2;">
-            </label>
-            <label style="display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:600;color:#2a3240;">Email
-              <input name="email" type="email" placeholder="email@kompaniya.uz" style="padding:12px 14px;border:1px solid rgba(12,35,64,.2);font-size:14px;font-family:inherit;background:#faf8f2;">
-            </label>
-          </div>
-          <label style="display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:600;color:#2a3240;margin-bottom:16px;">Xizmat turi
-            <select name="service" style="padding:12px 14px;border:1px solid rgba(12,35,64,.2);font-size:14px;font-family:inherit;background:#faf8f2;cursor:pointer;">
-              <option>Audit xizmatlari</option>
-              <option>Buxgalteriya autsorsingi</option>
-              <option>Soliq konsaltingi</option>
-              <option>Moliyaviy hisobotni tiklash</option>
-              <option>IFRS transformatsiya</option>
-              <option>Malaka oshirish / treninglar</option>
-            </select>
-          </label>
-          <label style="display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:600;color:#2a3240;margin-bottom:24px;">Xabar
-            <textarea name="message" rows="3" placeholder="So'rovingizni qisqacha yozing" style="padding:12px 14px;border:1px solid rgba(12,35,64,.2);font-size:14px;font-family:inherit;background:#faf8f2;resize:vertical;"></textarea>
-          </label>
-          <button type="submit" class="btn-submit">So'rov yuborish</button>
-        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer style="background:#081a30;color:rgba(246,242,233,.66);">
-    <div style="max-width:1240px;margin:0 auto;padding:64px 32px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:44px;">
-      <div style="max-width:300px;">
-        <div style="display:flex;align-items:center;gap:11px;margin-bottom:18px;">
-          <span style="width:32px;height:32px;background:#0c2340;border:1px solid rgba(212,182,106,.4);display:flex;align-items:center;justify-content:center;">
+<div class="post-modal" id="post-modal" aria-hidden="true">
+  <div class="post-dialog" role="dialog" aria-modal="true" aria-labelledby="post-modal-title">
+    <div class="post-dialog-head">
+      <div>
+        <span class="news-tag" id="post-modal-cat">POST</span>
+        <div class="post-dialog-title" id="post-modal-title">Telegram post</div>
+        <div class="news-date" id="post-modal-date" style="margin-left:0;margin-top:10px;"></div>
+      </div>
+      <button class="post-close" type="button" onclick="closePostModal()" aria-label="Close post">×</button>
+    </div>
+    <div class="post-dialog-body" id="post-modal-body"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:32px;height:32px;background:#0c2340;border:1px solid rgba(212,182,106,.35);display:flex;align-items:center;justify-content:center;">
             <span style="width:12px;height:12px;border:2px solid #d4b66a;transform:rotate(45deg);display:block;"></span>
-          </span>
-          <span style="font:700 19px 'Spectral';color:#f6f2e9;">MEZON<span style="color:#b8923a;">·</span>AUDIT</span>
+          </div>
+          <span style="font:700 18px 'Spectral';color:#f6f2e9;">MEZON<span style="color:#b8923a;">·</span>AUDIT</span>
         </div>
-        <p style="font-size:14px;line-height:1.65;margin:0;">Buxgalteriya hisobi, soliq va audit bo'yicha professional xizmatlar va kasbiy nashrlar.</p>
+        <p>Buxgalteriya hisobi, soliq va audit bo'yicha professional xizmatlar va kasbiy nashrlar.</p>
       </div>
-      <div>
-        <div style="font:600 13px 'IBM Plex Sans';letter-spacing:.14em;color:#d4b66a;margin-bottom:18px;">XIZMATLAR</div>
-        <div style="display:flex;flex-direction:column;gap:11px;font-size:14px;">
-          <a href="#xizmatlar" class="footer-link">Audit</a>
-          <a href="#xizmatlar" class="footer-link">Buxgalteriya autsorsingi</a>
-          <a href="#xizmatlar" class="footer-link">Soliq konsaltingi</a>
-          <a href="#xizmatlar" class="footer-link">IFRS transformatsiya</a>
-        </div>
+      <div class="footer-col">
+        <div class="footer-col-title">XIZMATLAR</div>
+        <a href="#xizmatlar">Audit</a>
+        <a href="#xizmatlar">Buxgalteriya autsorsingi</a>
+        <a href="#xizmatlar">Soliq konsaltingi</a>
+        <a href="#xizmatlar">IFRS transformatsiya</a>
       </div>
-      <div>
-        <div style="font:600 13px 'IBM Plex Sans';letter-spacing:.14em;color:#d4b66a;margin-bottom:18px;">MENYU</div>
-        <div style="display:flex;flex-direction:column;gap:11px;font-size:14px;">
-          <a href="#yangiliklar" class="footer-link">Yangiliklar</a>
-          <a href="#kitoblar" class="footer-link">Kitoblar</a>
-          <a href="#biz" class="footer-link">Biz haqimizda</a>
-          <a href="#aloqa" class="footer-link">Bog'lanish</a>
-        </div>
+      <div class="footer-col">
+        <div class="footer-col-title">MENYU</div>
+        <a href="#yangiliklar">Yangiliklar</a>
+        <a href="#kitoblar">Kitoblar</a>
+        <a href="#biz">Biz haqimizda</a>
+        <a href="#aloqa">Bog'lanish</a>
       </div>
-      <div>
-        <div style="font:600 13px 'IBM Plex Sans';letter-spacing:.14em;color:#d4b66a;margin-bottom:18px;">ALOQA</div>
-        <div style="display:flex;flex-direction:column;gap:11px;font-size:14px;">
-          <span>+998 71 200 18 18</span>
-          <span>info@mezonaudit.uz</span>
-          <span>Toshkent, Amir Temur 108</span>
-        </div>
+      <div class="footer-col">
+        <div class="footer-col-title">ALOQA</div>
+        <span>+998 71 200 18 18</span>
+        <span>info@mezonaudit.uz</span>
+        <span>Toshkent, Amir Temur 108</span>
       </div>
     </div>
-    <div style="max-width:1240px;margin:48px auto 0;padding:22px 32px;border-top:1px solid rgba(246,242,233,.1);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px;color:rgba(246,242,233,.5);">
+    <div class="footer-bottom">
       <span>© 2026 MEZON·AUDIT. Barcha huquqlar himoyalangan.</span>
       <span>Maxfiylik siyosati · Foydalanish shartlari</span>
     </div>
-  </footer>
+  </div>
+</footer>
 
-</div>
 <script>
+  const EXPORT_PATH = 'assets/ChatExport_2026-06-25/result.json';
+  const EXPORT_MEDIA_ROOT = 'assets/ChatExport_2026-06-25/';
+  const TELEGRAM_CHANNEL = 'https://t.me/hisobvakitob';
+  let telegramPosts = [];
+
+  const monthNamesUz = [
+    'yanvar', 'fevral', 'mart', 'aprel', 'may', 'iyun',
+    'iyul', 'avgust', 'sentabr', 'oktabr', 'noyabr', 'dekabr'
+  ];
+
+  function escapeHtml(value) {
+    return String(value || '').replace(/[&<>"']/g, ch => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[ch]));
+  }
+
+  function textFromTelegram(value) {
+    if (Array.isArray(value)) {
+      return value.map(part => typeof part === 'string' ? part : (part.text || '')).join('');
+    }
+    return value || '';
+  }
+
+  function linksFromTelegram(value) {
+    if (!Array.isArray(value)) return [];
+    return value
+      .filter(part => typeof part === 'object' && part.href)
+      .map(part => ({ text: part.text || part.href, href: part.href }));
+  }
+
+  function cleanPostText(text) {
+    return text
+      .replace(/\u00a0/g, ' ')
+      .replace(/Kanalga\s+a'?zo bo'?ling!?/gi, '')
+      .replace(/Subscribe to the\s+channel!?/gi, '')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+  }
+
+  function postTitle(text) {
+    const lines = cleanPostText(text).split('\n').map(line => line.trim()).filter(Boolean);
+    const firstUseful = lines.find(line => !line.startsWith('#')) || 'Telegram post';
+    return firstUseful.replace(/^[-–—\s]+/, '').slice(0, 120);
+  }
+
+  function postExcerpt(text, limit = 210) {
+    const cleaned = cleanPostText(text).replace(/#[^\s#]+/g, '').replace(/\s+/g, ' ').trim();
+    if (cleaned.length <= limit) return cleaned;
+    return cleaned.slice(0, limit).replace(/\s+\S*$/, '') + '...';
+  }
+
+  function postCategory(text, message) {
+    const lowered = text.toLowerCase();
+    const fileName = String(message.file_name || message.file || '').toLowerCase();
+    if (lowered.includes('audit') || lowered.includes('аудит') || fileName.includes('audit')) return 'Audit';
+    if (lowered.includes('ҳисоб') || lowered.includes('hisob') || lowered.includes('мҳхс') || lowered.includes('ifrs')) return 'Hisobot';
+    if (lowered.includes('солиқ') || lowered.includes('soliq') || lowered.includes('qqs') || lowered.includes('жшдс')) return 'Soliq';
+    return 'Boshqa';
+  }
+
+  function formatPostDate(value) {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return '';
+    return `${date.getDate()}-${monthNamesUz[date.getMonth()]}, ${date.getFullYear()}`;
+  }
+
+  function imageMarkup(post, className) {
+    if (post.photo) {
+      return `<img src="${EXPORT_MEDIA_ROOT}${encodeURI(post.photo)}" alt="${escapeHtml(post.title)}">`;
+    }
+    if (post.file) {
+      return `<div class="post-placeholder"><span>PDF / fayl biriktirilgan</span></div>`;
+    }
+    return `<div class="post-placeholder"><span>${escapeHtml(post.category.toLowerCase())}</span></div>`;
+  }
+
+  function normalizePost(message) {
+    const rawText = textFromTelegram(message.text);
+    return {
+      id: message.id,
+      date: message.date,
+      dateLabel: formatPostDate(message.date),
+      text: cleanPostText(rawText),
+      title: postTitle(rawText),
+      excerpt: postExcerpt(rawText),
+      category: postCategory(rawText, message),
+      photo: message.photo || '',
+      file: message.file || '',
+      fileName: message.file_name || '',
+      links: linksFromTelegram(message.text),
+      telegramUrl: `${TELEGRAM_CHANNEL}/${message.id}`
+    };
+  }
+
+  function renderFeatured(post) {
+    const featured = document.querySelector('.news-featured');
+    if (!featured || !post) return;
+    featured.href = post.telegramUrl;
+    featured.onclick = event => {
+      event.preventDefault();
+      openPostModal(post.id);
+    };
+    featured.innerHTML = `
+      <div class="nf-img">${imageMarkup(post)}</div>
+      <div class="nf-body">
+        <div><span class="news-tag">${escapeHtml(post.category)}</span><span class="news-date">${escapeHtml(post.dateLabel)}</span></div>
+        <div class="nf-title">${escapeHtml(post.title)}</div>
+        <p class="nf-excerpt">${escapeHtml(post.excerpt)}</p>
+        <span class="nf-more">Postni o'qish →</span>
+      </div>`;
+  }
+
+  function renderNewsGrid(posts) {
+    const grid = document.getElementById('news-grid');
+    if (!grid) return;
+    grid.innerHTML = posts.map(post => `
+      <a href="${post.telegramUrl}" class="news-card" data-cat="${escapeHtml(post.category)}" data-post-id="${post.id}">
+        <div class="nc-img">${imageMarkup(post)}</div>
+        <div class="nc-body">
+          <div class="nc-meta"><span class="nc-cat">${escapeHtml(post.category)}</span><span class="nc-date">${escapeHtml(post.dateLabel)}</span></div>
+          <div class="nc-title">${escapeHtml(post.title)}</div>
+          <p class="nc-excerpt">${escapeHtml(post.excerpt)}</p>
+          <span class="read-link">O'qish →</span>
+        </div>
+      </a>
+    `).join('');
+    grid.querySelectorAll('.news-card').forEach(card => {
+      card.addEventListener('click', event => {
+        event.preventDefault();
+        openPostModal(Number(card.dataset.postId));
+      });
+    });
+  }
+
+  async function loadTelegramPosts() {
+    try {
+      const response = await fetch(EXPORT_PATH);
+      if (!response.ok) throw new Error(`JSON not found: ${response.status}`);
+      const data = await response.json();
+      telegramPosts = (data.messages || [])
+        .filter(message => message.type === 'message' && textFromTelegram(message.text).trim())
+        .map(normalizePost)
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
+      renderFeatured(telegramPosts[0]);
+      renderNewsGrid(telegramPosts);
+    } catch (error) {
+      console.warn('Telegram export could not be loaded.', error);
+    }
+  }
+
+  function openPostModal(postId) {
+    const post = telegramPosts.find(item => item.id === postId);
+    if (!post) return;
+    document.getElementById('post-modal-cat').textContent = post.category;
+    document.getElementById('post-modal-title').textContent = post.title;
+    document.getElementById('post-modal-date').textContent = post.dateLabel;
+    const media = post.photo ? `<img src="${EXPORT_MEDIA_ROOT}${encodeURI(post.photo)}" alt="${escapeHtml(post.title)}">` : '';
+    const fileAction = post.file ? `<a href="${EXPORT_MEDIA_ROOT}${encodeURI(post.file)}" target="_blank" rel="noopener">${escapeHtml(post.fileName || 'Faylni ochish')}</a>` : '';
+    const uniqueLinks = [...new Map(post.links.map(link => [link.href, link])).values()];
+    const linkActions = uniqueLinks
+      .filter(link => link.href !== TELEGRAM_CHANNEL)
+      .slice(0, 3)
+      .map(link => `<a href="${escapeHtml(link.href)}" target="_blank" rel="noopener">${escapeHtml(link.text)}</a>`)
+      .join('');
+    document.getElementById('post-modal-body').innerHTML = `
+      ${media}
+      <div class="post-text">${escapeHtml(post.text)}</div>
+      <div class="post-actions">
+        <a href="${post.telegramUrl}" target="_blank" rel="noopener">Telegramda ochish</a>
+        ${fileAction}
+        ${linkActions}
+      </div>`;
+    document.getElementById('post-modal').classList.add('open');
+    document.getElementById('post-modal').setAttribute('aria-hidden', 'false');
+  }
+
+  function closePostModal() {
+    document.getElementById('post-modal').classList.remove('open');
+    document.getElementById('post-modal').setAttribute('aria-hidden', 'true');
+  }
+
   function filterNews(btn, category) {
     document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
@@ -578,18 +914,23 @@
       card.style.display = (category === 'Barchasi' || card.dataset.cat === category) ? 'flex' : 'none';
     });
   }
-
   function submitForm(e) {
     e.preventDefault();
     document.getElementById('contact-form').style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
   }
-
   function resetForm() {
     document.getElementById('contact-form').reset();
     document.getElementById('contact-form').style.display = 'block';
     document.getElementById('form-success').style.display = 'none';
   }
+  document.getElementById('post-modal').addEventListener('click', event => {
+    if (event.target.id === 'post-modal') closePostModal();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closePostModal();
+  });
+  loadTelegramPosts();
 </script>
 </body>
 </html>
