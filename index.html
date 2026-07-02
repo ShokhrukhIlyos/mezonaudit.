@@ -132,6 +132,10 @@
     .nc-excerpt{font-size:14px;line-height:1.6;color:#6a7284;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
     .post-placeholder{aspect-ratio:16/10;background:repeating-linear-gradient(135deg,#e7e0d0,#e7e0d0 12px,#eee7d8 12px,#eee7d8 24px);display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;}
     .post-placeholder span{font:500 11px ui-monospace,monospace;color:#9a8f78;}
+    .post-topic-image{position:relative;aspect-ratio:16/10;overflow:hidden;background:#e7e0d0;}
+    .post-topic-image img{width:100%;height:100%;object-fit:cover;transition:transform .25s;}
+    .news-card:hover .post-topic-image img,.news-featured:hover .post-topic-image img{transform:scale(1.04);}
+    .post-topic-badge{position:absolute;left:14px;bottom:14px;background:rgba(12,35,64,.86);color:#f6f2e9;font:600 10px 'IBM Plex Sans';letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;box-shadow:0 8px 20px rgba(0,0,0,.18);}
     .post-modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(8,26,48,.72);}
     .post-modal.open{display:flex;}
     .post-dialog{width:min(860px,100%);max-height:88vh;overflow:auto;background:#fff;border:1px solid #e4dfd4;box-shadow:0 30px 80px rgba(0,0,0,.28);}
@@ -191,6 +195,8 @@
 
     @media(max-width:900px){
       .hero-grid,.story-grid,.contact-grid,.news-featured{grid-template-columns:1fr;}
+      .nav-links{display:none;}
+      .nav-inner{justify-content:center;}
       .hero-float{left:0;bottom:-14px;}
       .story-float{right:-10px;}
       .svc-grid{grid-template-columns:1fr;}
@@ -200,11 +206,20 @@
       .footer-main{grid-template-columns:1fr 1fr;}
     }
     @media(max-width:600px){
+      body{overflow-x:hidden;}
       .wrap{padding:0 20px;}
-      .nav-inner{padding:14px 20px;}
+      .section{padding:64px 0;}
+      .nav-inner{padding:12px 20px;}
+      .nav-logo-name{font-size:18px;}
+      .nav-logo-sub{font-size:8px;letter-spacing:.16em;}
+      .hero-grid{gap:36px;padding:44px 0 62px;}
+      .hero-badge-inline{padding:9px 12px;margin-bottom:22px;}
+      .hero-badge-txt{font-size:11px;}
+      .hero-img{aspect-ratio:16/11;}
+      .hero-float{left:14px;bottom:-12px;padding:16px 20px;}
+      .hero-float-num{font-size:30px;}
       .form-row{grid-template-columns:1fr;}
       .footer-main{grid-template-columns:1fr;}
-      .hero-grid{padding:52px 0 68px;}
       .post-dialog-head,.post-dialog-body{padding:22px;}
     }
   </style>
@@ -792,14 +807,29 @@
     return `${date.getDate()}-${monthNamesUz[date.getMonth()]}, ${date.getFullYear()}`;
   }
 
+  const topicImages = {
+    soliq: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80',
+    audit: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80',
+    hisobot: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1200&q=80',
+    singapore: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80',
+    default: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80'
+  };
+
+  function fallbackTopicImage(post) {
+    const haystack = `${post.title || ''} ${post.category || ''} ${post.fileName || ''} ${post.file || ''}`.toLowerCase();
+    if (haystack.includes('singapur') || haystack.includes('singapore')) return topicImages.singapore;
+    if (haystack.includes('audit') || haystack.includes('аудит')) return topicImages.audit;
+    if (haystack.includes('hisob') || haystack.includes('ҳисоб') || haystack.includes('ifrs') || haystack.includes('мҳхс')) return topicImages.hisobot;
+    if (haystack.includes('soliq') || haystack.includes('солиқ') || haystack.includes('qqs') || haystack.includes('жшдс')) return topicImages.soliq;
+    return topicImages.default;
+  }
+
   function imageMarkup(post, className) {
     if (post.photo) {
       return `<img src="${EXPORT_MEDIA_ROOT}${encodeURI(post.photo)}" alt="${escapeHtml(post.title)}">`;
     }
-    if (post.file) {
-      return `<div class="post-placeholder"><span>PDF / fayl biriktirilgan</span></div>`;
-    }
-    return `<div class="post-placeholder"><span>${escapeHtml(post.category.toLowerCase())}</span></div>`;
+    const badge = post.file ? 'PDF / fayl biriktirilgan' : post.category;
+    return `<div class="post-topic-image"><img src="${fallbackTopicImage(post)}" alt="${escapeHtml(post.title)}"><span class="post-topic-badge">${escapeHtml(badge)}</span></div>`;
   }
 
   function normalizePost(message) {
